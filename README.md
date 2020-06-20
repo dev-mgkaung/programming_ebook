@@ -1,4 +1,4 @@
-# Programming Ebook Seller (Flutter Project)
+# Programming Ebook (Flutter Project)
 
 Programming Ebook Collections Application (Bloc Pattern)
 
