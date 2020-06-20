@@ -6,8 +6,8 @@ Programming Ebook Collections Application (Bloc Pattern)
 Project Structure
 --------
     
-    <<
-    <<- lib
+    ```
+    - lib
     << -models (for collection of data)
     << -constraints ( for common data values)
     << -services    ( for network or local database repositories)
