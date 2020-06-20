@@ -1,11 +1,6 @@
 
 String appName = "Programming Ebook";
-String quickFont = 'Rubik-Regular';
-String ralewayFont = 'Raleway';
-String quickBoldFont = 'quicksand_bold.otf';
-String quickNormalFont = 'quicksand_book.otf';
-String quickLightFont = 'quicksand_light.otf';
-String homeRoute = '/homepage';
+String defaultFont = 'Rubik-Regular';
 
 //api
 String baseUrl = 'https://min-api.cryptocompare.com';

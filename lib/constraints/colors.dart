@@ -8,3 +8,6 @@ const kBrown900 = const Color(0xFF442B2D);
 const kErrorRed = const Color(0xFFC5032B);
 const kWhite = const Color(0xFFFFFBFA);
 const kBackgroundWhite = Colors.white;
+
+const kCircularStopAnimationColor=const Color(0xFF42A5F5);
+const kCircularProgressColor= const Color(0xFF4DD0E1);
