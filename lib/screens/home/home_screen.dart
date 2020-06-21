@@ -1,68 +1,51 @@
 import 'package:badges/badges.dart';
-import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:programmingebook/constraints/strings.dart';
-import 'package:programmingebook/constraints/styles.dart';
+import 'package:programmingebook/screens/home/local_widgets/home_bottom_nav.dart';
+import 'package:programmingebook/screens/home/local_widgets/home_drawer_menu.dart';
+import 'package:programmingebook/screens/home/local_widgets/home_search_box.dart';
 
 class HomeScreen extends StatefulWidget {
+
+  static const String routeName = '/home';
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int currentPage = 0;
+  GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        key: _drawerKey,
         body: SafeArea(
           child: Container(
             child: ListView(
               physics: ClampingScrollPhysics(),
               children: [
-                _ActionBarSearch(),
+              Column(
+                 crossAxisAlignment: CrossAxisAlignment.start, children: [
+                _HomeActionBar(),
+                 HomeSearchBox()
+              ],)
               ],
             ),
           ),
         ),
-        bottomNavigationBar: _customBottomNavigationBar());
+        drawer: HomeAppDrawer(),
+        bottomNavigationBar: HomeBottomNav());
   }
 
-  Widget _customBottomNavigationBar() {
-    return FancyBottomNavigation(
-      barBackgroundColor: Colors.white,
-      initialSelection: 0,
-      circleColor: Colors.deepPurpleAccent,
-      activeIconColor: Colors.white,
-      inactiveIconColor: Colors.blueGrey,
-      textColor: Colors.deepPurpleAccent,
-      tabs: [
-        TabData(iconData: Icons.home, title: "Home"),
-        TabData(iconData: Icons.library_books, title: "Books"),
-        TabData(iconData: Icons.shopping_cart, title: "Cart"),
-        TabData(iconData: Icons.more, title: "More")
-      ],
-      onTabChangedListener: (position) {
-        setState(() {
-          currentPage = position;
-        });
-      },
-    );
-  }
-
-  Widget _ActionBarSearch() {
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      //Custom App Bar
-      Padding(
+  Widget _HomeActionBar() {
+    return Padding(
           padding: const EdgeInsets.only(top: 8, left: 16, right: 16),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
                  GestureDetector(
                   onTap: () {
-                    print("On Taped  Drawer Menu");
+                    _drawerKey.currentState.openDrawer();
                   },
                   child: SvgPicture.asset(
                     "assets/svg/drawer_menu.svg",
@@ -93,18 +76,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 )
               ]),
             ],
-          )),
-      //Search Bar
-      Padding(
-        padding: const EdgeInsets.only(top: 15, left: 16),
-        child: Text(home_label,
-            style: GoogleFonts.openSans(
-                color: Colors.grey, fontSize: 13, fontWeight: FontWeight.w600)),
-      ),
-      Padding(
-        padding: const EdgeInsets.only(top: 15, left: 16),
-        child: Text(latest_book, style: Styles.mediumTextStyle),
-      ),
-    ]);
+          ));
   }
 }

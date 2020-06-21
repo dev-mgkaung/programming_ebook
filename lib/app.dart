@@ -18,6 +18,9 @@ class App extends StatelessWidget {
   ThemeData _buildTheme() {
     final ThemeData base = ThemeData.light();
     return base.copyWith(
+        primaryColor: Colors.deepPurple,
+        accentColor: Colors.brown,
+        primaryColorDark: Colors.blueAccent,
         primaryIconTheme: base.iconTheme.copyWith(color: Colors.black));
   }
 

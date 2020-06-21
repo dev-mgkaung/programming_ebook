@@ -1,0 +1,88 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+class HomeAppDrawer extends StatelessWidget {
+
+  Widget _createHeader() {
+    return DrawerHeader(
+        margin: EdgeInsets.zero,
+        padding: EdgeInsets.zero,
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                fit: BoxFit.cover,
+                image:  AssetImage('assets/images/background.jpg'))),
+        child: Stack(children: <Widget>[
+          Positioned(
+            bottom: 17.0,
+            left: 18.0,
+            child: Container(
+              width: 120,height: 120,
+              padding: const EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(70),
+                image: DecorationImage(
+                  image: AssetImage("assets/images/mgkaung.jpg")
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Positioned(
+              bottom: 12.0,
+              right: 16.0,
+              child: Text("Mg Kaung",
+                  style: TextStyle(
+                      color: Colors.blue,
+                      fontSize: 20.0,
+                      fontFamily: 'GalleryIcons',
+                      fontWeight: FontWeight.w700))),
+        ]));
+  }
+
+  Widget _createDrawerItem(
+    {IconData icon, String text, GestureTapCallback onTap}) {
+  return ListTile(
+    title: Row(
+      children: <Widget>[
+        Icon(icon),
+        Padding(
+          padding: EdgeInsets.only(left: 8.0),
+          child: Text(text),
+        )
+      ],
+    ),
+    onTap: onTap,
+  );
+}
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: <Widget>[
+          _createHeader(),
+          _createDrawerItem(icon: Icons.home,text: 'Home',),
+          _createDrawerItem(icon: Icons.collections_bookmark, text: 'Books',),
+          _createDrawerItem(icon: Icons.category, text: 'Catgory',),
+          Divider(),
+          _createDrawerItem(icon: Icons.payment, text: 'Payment'),
+          _createDrawerItem(icon: Icons.border_color, text: 'Order'),
+          _createDrawerItem(icon: Icons.shop, text: 'Shop'),
+          _createDrawerItem(icon: Icons.not_listed_location, text: 'Address'),
+          Divider(),
+          _createDrawerItem(icon: Icons.bug_report, text: 'Report an issue'),
+          ListTile(
+            title: Text('0.0.1'),
+            onTap: () {},
+          ),
+        ],
+      ),
+    );
+  }
+}
