@@ -9,6 +9,7 @@ int ok200 = 200;
 //category
 String recommend="Recommend for You";
 String browse_catgory="Browse Categories";
+String category="Categories";
 String search="Search";
 const List<String> images = [
   "assets/images/carousal_one.jpg",

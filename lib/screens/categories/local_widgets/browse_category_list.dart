@@ -1,7 +1,22 @@
 import 'package:flutter/material.dart';
-class BrowseCategoryList extends StatelessWidget {
+import 'package:programmingebook/models/category.dart';
+import 'package:programmingebook/screens/categories/local_widgets/category_list_item_row.dart';
+class CategoryList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      color: Colors.white,
+      height: 480,
+      margin: const EdgeInsets.only(left: 16,right: 16,top: 5,bottom: 5),
+      child: Expanded(
+                    child: new ListView.builder(
+                      physics: ClampingScrollPhysics(),
+                     itemCount: categorylist.length,
+                     shrinkWrap: true,
+                     padding: new EdgeInsets.symmetric(vertical: 16.0),
+                     itemBuilder: (context, index) => new CategoryListItemRow(categorylist[index]),
+                )
+      ),
+    );
   }
 }

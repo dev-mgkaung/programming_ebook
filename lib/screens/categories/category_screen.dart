@@ -4,6 +4,8 @@ import 'package:programmingebook/constraints/constraints.dart';
 import 'package:programmingebook/constraints/styles.dart';
 import 'package:programmingebook/screens/categories/local_widgets/category_carousal_image.dart';
 
+import 'local_widgets/browse_category_list.dart';
+
 class CategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -29,10 +31,15 @@ class CategoryScreen extends StatelessWidget {
                     onPressed: (){},
                     icon: const Icon(Icons.search,size: 16,color: Colors.orange,),
                     label: Text(search,style: TextStyle(color: Colors.orange,fontSize: 16,fontWeight: FontWeight.w800),),
-                  )
+                  ),
                 ],
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.only(left: 16, top: 6,bottom: 6),
+              child: Text(category,style: Styles.mediumTextStyle),
+            ),
+            CategoryList(),
           ],)
         ],
       ),
