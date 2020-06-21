@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:programmingebook/constraints/strings.dart';
 import 'package:programmingebook/constraints/styles.dart';
 import 'package:programmingebook/routes.dart';
-import 'package:programmingebook/screens/home/home_screen.dart';
+import 'package:programmingebook/screens/page/main_page.dart';
 import 'package:programmingebook/widgets/mcircularprogress_loader.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     _mockCheckForSession().then((status) {
       if (status) {
-        PageRouter.pushPageReplacement(context,HomeScreen());
+        PageRouter.pushPageReplacement(context,MainScreen());
       } else {}
     });
   }

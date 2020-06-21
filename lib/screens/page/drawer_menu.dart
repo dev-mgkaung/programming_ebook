@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-class HomeAppDrawer extends StatelessWidget {
-
+class AppDrawer extends StatelessWidget {
   Widget _createHeader() {
     return DrawerHeader(
         margin: EdgeInsets.zero,

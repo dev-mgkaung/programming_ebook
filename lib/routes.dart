@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:programmingebook/screens/home/home_screen.dart';
+import 'package:programmingebook/screens/page/main_page.dart';
 class PageRouter {
-  static const String home = HomeScreen.routeName;
+  static const String home = MainScreen.routeName;
 
   static void gotoNextPage(BuildContext context,Widget nextScreen) {
     Navigator.push(
