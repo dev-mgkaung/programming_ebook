@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:programmingebook/screens/home/local_widgets/home_bottom_nav.dart';
 import 'package:programmingebook/screens/home/local_widgets/home_drawer_menu.dart';
+import 'package:programmingebook/screens/home/local_widgets/home_popular_list.dart';
 import 'package:programmingebook/screens/home/local_widgets/home_search_box.dart';
+import 'package:programmingebook/screens/home/local_widgets/home_tab_bar.dart';
 
 class HomeScreen extends StatefulWidget {
 
@@ -27,7 +29,9 @@ class _HomeScreenState extends State<HomeScreen> {
               Column(
                  crossAxisAlignment: CrossAxisAlignment.start, children: [
                 _HomeActionBar(),
-                 HomeSearchBox()
+                 HomeSearchBox(),
+                 HomeTabBar(),
+                HomePopularList(),
               ],)
               ],
             ),

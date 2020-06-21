@@ -19,7 +19,9 @@ class _HomeSearchBoxState extends State<HomeSearchBox> {
           padding: const EdgeInsets.only(top: 15, left: 16),
           child: Text(home_label,
               style: GoogleFonts.openSans(
-                  color: Colors.grey, fontSize: 13, fontWeight: FontWeight.w600)),
+                  color: Colors.grey,
+                  fontSize: 13,
+                  fontWeight: FontWeight.w600)),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 15, left: 16),
@@ -27,7 +29,7 @@ class _HomeSearchBoxState extends State<HomeSearchBox> {
         ),
         Container(
           height: 35,
-          margin: EdgeInsets.only(left: 16,right: 16,top: 8,bottom: 18),
+          margin: EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 18),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: Colors.black12,
@@ -46,29 +48,37 @@ class _HomeSearchBoxState extends State<HomeSearchBox> {
                 maxLengthEnforced: true,
                 style: Styles.mediumTextStyle,
                 decoration: InputDecoration(
-                  contentPadding: EdgeInsets.fromLTRB( 16,10, 10, 16),
+                  contentPadding: EdgeInsets.fromLTRB(16, 10, 10, 16),
                   border: InputBorder.none,
                   hintText: 'Search book....',
-                  hintStyle: TextStyle(color: Colors.black45,fontSize: 14,fontWeight: FontWeight.w400),
+                  hintStyle: TextStyle(
+                      color: Colors.black45,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400),
                 ),
               ),
               Positioned(
-                right: 0,
-                child: Container(
-                  width: 35, height: 35,
-                  decoration: BoxDecoration
-                    (
-                    color: Colors.orange,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Center(child: Icon(Icons.search,color: Colors.white,)),
-                ),
-              )
+                  right: 0,
+                  child: Container(
+                    width: 35,
+                    height: 35,
+                    decoration: BoxDecoration(
+                      color: Colors.orange,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Center(
+                      child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.search,
+                            color: Colors.white,
+                          )),
+                    ),
+                  ))
             ],
           ),
         )
       ],
-
     );
   }
 }
