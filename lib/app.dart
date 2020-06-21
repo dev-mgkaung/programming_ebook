@@ -11,14 +11,14 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: appName,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          brightness: Brightness.light,
-          accentColor: Colors.orange,
-          primaryColor: Colors.orangeAccent,
-          primarySwatch: Colors.orange,
-        //  fontFamily: quickFont
-      ),
+      theme: _buildTheme(),
       home: SplashScreen(),
     );
   }
+  ThemeData _buildTheme() {
+    final ThemeData base = ThemeData.light();
+    return base.copyWith(
+        primaryIconTheme: base.iconTheme.copyWith(color: Colors.black));
+  }
+
 }
