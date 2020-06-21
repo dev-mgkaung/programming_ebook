@@ -1,8 +1,10 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:programmingebook/constraints/strings.dart';
 import 'package:programmingebook/constraints/styles.dart';
 import 'package:programmingebook/widgets/circular_dot_indicator.dart';
+import 'package:programmingebook/widgets/spinKit_loading_widget.dart';
 
 class HomeTabBar extends StatelessWidget {
   @override
@@ -59,24 +61,31 @@ class HomeTabBar extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return Card(
-                  margin: EdgeInsets.only(right: 10,bottom: 5),
-                  elevation: 3,
-                  child: InkWell(
-                    splashColor: Colors.blue.withAlpha(30),
-                    onTap: () {
-                      print('Card tapped.');
-                    },
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8.0),
-                      child: Image.network(
-                        "https://goalkicker.com/PythonBook/PythonGrow.png",
-                        fit: BoxFit.cover,
-                        height: 140,
-                        width: 133,
-                      ),
-                    ),
-                  ),
-                );
+                    margin: EdgeInsets.only(right: 10, bottom: 5),
+                    elevation: 3,
+                    child: InkWell(
+                        splashColor: Colors.blue.withAlpha(30),
+                        onTap: () {
+                          print('Card tapped.');
+                        },
+                        child: Container(
+                          width: 138,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8.0),
+                            child: CachedNetworkImage(
+                              imageUrl:
+                                  "https://goalkicker.com/PythonBook/PythonGrow.png",
+                              placeholder: (context, url) =>
+                                  SpinKitLoadingWidget(
+                                      isImage: false, index: 0),
+                              errorWidget: (context, url, error) => Image.asset(
+                                "assets/images/onboard3.png",
+                                fit: BoxFit.cover,
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        )));
               }),
         )
       ],

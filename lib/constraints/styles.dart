@@ -4,7 +4,7 @@ class Styles {
   static const mediumTextStyle = TextStyle(
     fontSize: 16.0,
     color: Colors.black87,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w900,
     fontFamily: 'Rubik-Medium'
   );
 

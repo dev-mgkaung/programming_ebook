@@ -24,7 +24,7 @@ class _CategoryCarousalImageState extends State<CategoryCarousalImage> {
                   image: AssetImage(
                     images[index],
                   ),
-                  fit: BoxFit.fill,
+                  fit: BoxFit.cover,
                 )
               ),
             );

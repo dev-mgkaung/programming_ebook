@@ -8,6 +8,8 @@ int ok200 = 200;
 
 //category
 String recommend="Recommend for You";
+String browse_catgory="Browse Categories";
+String search="Search";
 const List<String> images = [
   "assets/images/carousal_one.jpg",
   "assets/images/carosual_two.jpg",
