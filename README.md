@@ -6,7 +6,7 @@ Programming Ebook Collections Application (Bloc Pattern)
 Project Structure
 --------
     
-    
+    ```diff
      * lib
          * models        ( for collection of data)
          * constraints   ( for common data values)
@@ -19,7 +19,7 @@ Project Structure
       * app.dart    ( root widget is MaterialApp or CapitinoApp , theme, locate,..)
       * main.dart   ( App Launch main widget)
       * routes.dart ( Navigtion Page management System)
-   
+   ```
   
 Screenshoot
 --------
