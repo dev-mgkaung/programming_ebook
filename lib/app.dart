@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:programmingebook/constraints/constraints.dart';
-import 'package:programmingebook/screens/home/home_screen.dart';
 import 'package:programmingebook/screens/splash/splash_screen.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class App extends StatelessWidget {
   @override
@@ -10,6 +9,9 @@ class App extends StatelessWidget {
 
     return MaterialApp(
       title: appName,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       debugShowCheckedModeBanner: false,
       theme: _buildTheme(),
       home: SplashScreen(),
