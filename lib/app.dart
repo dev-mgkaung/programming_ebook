@@ -23,7 +23,7 @@ class App extends StatelessWidget {
         primaryColor: Colors.deepPurple,
         accentColor: Colors.brown,
         primaryColorDark: Colors.blueAccent,
-        primaryIconTheme: base.iconTheme.copyWith(color: Colors.black));
+        primaryIconTheme: base.iconTheme.copyWith(color: Colors.white));
   }
 
 }

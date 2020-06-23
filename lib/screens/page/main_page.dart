@@ -52,7 +52,7 @@ class _MainScreenState extends State<MainScreen> {
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.white,
-          leading: IconButton(icon: Icon(Icons.menu),
+          leading: IconButton(icon: Icon(Icons.menu,color: Colors.black,),
             onPressed: () {
               _globalKey.currentState.openDrawer();
             },),
