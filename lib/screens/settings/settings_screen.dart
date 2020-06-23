@@ -101,6 +101,14 @@ class _SettingScreenState extends State<SettingScreen> {
                       trailing: const Icon(Icons.arrow_drop_down_circle),
                     ),
                     Divider(),
+                    ListTile(
+                      onTap: (){},
+                      leading: const Icon(Icons.chat),
+                      title: Text("Customer Service"),
+                      // subtitle: Text('subtitle'.tr().toString()),
+                      trailing: const Icon(Icons.arrow_drop_down_circle),
+                    ),
+                    Divider(),
                     CheckboxListTile(
                       value: true,
                       onChanged: (bool value) {

@@ -67,13 +67,12 @@ class AppDrawer extends StatelessWidget {
         children: <Widget>[
           _createHeader(),
           _createDrawerItem(icon: Icons.home,text: 'Home',),
-          _createDrawerItem(icon: Icons.collections_bookmark, text: 'Books',),
-          _createDrawerItem(icon: Icons.category, text: 'Catgory',),
+          _createDrawerItem(icon: Icons.new_releases, text: 'New Books',),
+          _createDrawerItem(icon: Icons.card_giftcard, text: 'Discount Books',),
           Divider(),
-          _createDrawerItem(icon: Icons.payment, text: 'Payment'),
-          _createDrawerItem(icon: Icons.border_color, text: 'Order'),
-          _createDrawerItem(icon: Icons.shop, text: 'Shop'),
-          _createDrawerItem(icon: Icons.not_listed_location, text: 'Address'),
+          _createDrawerItem(icon: Icons.book, text: 'Free Book'),
+          _createDrawerItem(icon: Icons.file_download, text: 'Download'),
+          _createDrawerItem(icon: Icons.picture_as_pdf, text: 'Pdf Viewer'),
           Divider(),
           _createDrawerItem(icon: Icons.bug_report, text: 'Report an issue'),
           _createDrawerItem(icon: Icons.sentiment_very_satisfied,text: 'About',onTap: (){
