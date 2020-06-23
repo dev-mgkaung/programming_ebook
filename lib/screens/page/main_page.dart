@@ -116,7 +116,7 @@ class _MainScreenState extends State<MainScreen> {
                   .currentState as FancyBottomNavigationState;
               fState.setPage(3);
             }),
-            TabData(iconData: Icons.more, title: "More", onclick: () {
+            TabData(iconData: Icons.account_circle, title: "Profile", onclick: () {
               final FancyBottomNavigationState fState = _globalKey
                   .currentState as FancyBottomNavigationState;
               fState.setPage(4);

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:programmingebook/routes.dart';
 import 'package:programmingebook/screens/order/local_widgets/order_home_tab_bar.dart';
 
 class MyOrder extends StatefulWidget {
@@ -14,7 +15,7 @@ class _MyOrderState extends State<MyOrder> {
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.deepOrangeAccent,
-          leading: IconButton(icon: Icon(Icons.arrow_back_ios,color: Colors.white),onPressed: (){},),
+          leading: IconButton(icon: Icon(Icons.arrow_back_ios,color: Colors.white),onPressed: (){PageRouter.goToBackScreen(context);},),
           title: Text("My Order",style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.w600),),
           actions: <Widget>[
             IconButton(icon: Icon(Icons.shopping_cart,color: Colors.deepPurple),onPressed: (){},)
