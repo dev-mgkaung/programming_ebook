@@ -39,6 +39,8 @@ dependencies:
   easy_localization: ^2.3.2
   rabbit_converter: ^0.0.1
   package_info: ^0.4.1
+  flutter_rating: ^0.0.2
+  provider: 4.0.5
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
 

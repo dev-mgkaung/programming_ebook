@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:programmingebook/routes.dart';
 import 'package:programmingebook/screens/order/order_list.dart';
+import 'package:programmingebook/utils/theme.dart';
 import 'package:programmingebook/utils/utils.dart';
+import 'package:provider/provider.dart';
 class SettingScreen extends StatefulWidget {
   @override
   _SettingScreenState createState() => _SettingScreenState();
@@ -95,14 +97,6 @@ class _SettingScreenState extends State<SettingScreen> {
                     Divider(),
                     ListTile(
                       onTap: (){},
-                      leading: const Icon(Icons.color_lens),
-                      title: Text("Theme"),
-                      // subtitle: Text('subtitle'.tr().toString()),
-                      trailing: const Icon(Icons.arrow_drop_down_circle),
-                    ),
-                    Divider(),
-                    ListTile(
-                      onTap: (){},
                       leading: const Icon(Icons.chat),
                       title: Text("Customer Service"),
                       // subtitle: Text('subtitle'.tr().toString()),
@@ -118,7 +112,17 @@ class _SettingScreenState extends State<SettingScreen> {
                       title: Text("Notification"),
                       // subtitle: Text('subtitle'.tr().toString()),
                     ),
-                    SizedBox()
+                    Divider(),
+                    Consumer<ThemeNotifier>(
+                      builder: (context,notifier,child) => SwitchListTile(
+                        title: Text("Dark Mode"),
+                        onChanged: (val){
+                          notifier.toggleTheme();
+                        },
+                        value: notifier.darkTheme ,
+                      ),
+                    ),
+                    SizedBox(),
                   ],
                 ),
               )

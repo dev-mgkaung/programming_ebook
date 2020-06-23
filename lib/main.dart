@@ -4,11 +4,12 @@ import 'package:programmingebook/app.dart';
 
 void main() {
   runApp(
-    EasyLocalization(
-        supportedLocales: [Locale('en', 'US'), Locale('my')],
-        path: 'resources/langs',
-        saveLocale: true,
-        fallbackLocale: Locale('en', 'US'),
-        child: App()
-  ));
+      EasyLocalization(
+          supportedLocales: [Locale('en', 'US'), Locale('my')],
+          path: 'resources/langs',
+          saveLocale: true,
+          fallbackLocale: Locale('en', 'US'),
+          child: App()
+      ));
+
 }
