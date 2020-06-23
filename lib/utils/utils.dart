@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:programmingebook/constraints/colors.dart';
 import 'package:programmingebook/routes.dart';
+import 'package:programmingebook/utils/mmdetect.dart';
 
 class Utils {
 
@@ -21,22 +22,22 @@ class Utils {
       context: context,
       builder: (BuildContext context) {
         return CupertinoActionSheet(
-          title: Text('language'.tr().toString()),
+          title: Text(MMTheme.mmText('language'.tr().toString())),
           //message: Text(''),
           actions: <Widget>[
             CupertinoActionSheetAction(
-              child: Text('english'.tr().toString()),
+              child: Text(MMTheme.mmText('english'.tr().toString())),
               onPressed: () { ChangeLanguage('eng',context);PageRouter.goToBackScreen(context);},
             ),
             CupertinoActionSheetAction(
-              child: Text('myanmar'.tr().toString()),
+              child: Text(MMTheme.mmText('myanmar'.tr().toString())),
               onPressed: () { ChangeLanguage('my',context);PageRouter.goToBackScreen(context); },
             ),
 
           ],
           cancelButton: CupertinoActionSheetAction(
             isDefaultAction: true,
-            child: Text('cancel'.tr().toString()),
+            child: Text(MMTheme.mmText('cancel'.tr().toString())),
             onPressed: () { PageRouter.goToBackScreen(context); },
           ),
         );

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:flutter_page_indicator/flutter_page_indicator.dart';
-import 'package:programmingebook/constraints/constraints.dart';
+import 'package:programmingebook/constraints/strings.dart';
+
 class CategoryCarousalImage extends StatefulWidget {
   @override
   _CategoryCarousalImageState createState() => _CategoryCarousalImageState();

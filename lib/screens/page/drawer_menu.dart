@@ -76,10 +76,17 @@ class AppDrawer extends StatelessWidget {
           _createDrawerItem(icon: Icons.not_listed_location, text: 'Address'),
           Divider(),
           _createDrawerItem(icon: Icons.bug_report, text: 'Report an issue'),
-          ListTile(
-            title: Text('0.0.1'),
-            onTap: () {},
-          ),
+          _createDrawerItem(icon: Icons.sentiment_very_satisfied,text: 'About',onTap: (){
+            showAboutDialog(
+              context: context,
+              applicationName: 'Programming Ebook',
+              applicationVersion: '1.0.0',
+              applicationIcon: Image(image: AssetImage("assets/logo/logo.png"),),
+              applicationLegalese: 'Hey Guy , Nice to meet you again. This application is the first project of my creation.This pj was developeb by flutter lanugage with bloc pattern. Readable and easy to maintain',
+            //  children: aboutBoxChildren,
+            );
+          }),
+
         ],
       ),
     );
