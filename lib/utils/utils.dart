@@ -46,7 +46,7 @@ class Utils {
   }
   static Future<bool> displayToast(String message) {
     return Fluttertoast.showToast(
-        msg: message,
+        msg: MMTheme.mmText(message),
         toastLength: Toast.LENGTH_LONG,
         gravity: ToastGravity.BOTTOM,
         timeInSecForIos: 2,
@@ -59,7 +59,7 @@ class Utils {
       {String actionMessage, VoidCallback onClick}) {
     return SnackBar(
       content: Text(
-        message,
+        MMTheme.mmText(message),
         style: TextStyle(color: Colors.white, fontSize: 14.0),
       ),
       action: (actionMessage != null)
