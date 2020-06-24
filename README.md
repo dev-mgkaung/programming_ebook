@@ -14,7 +14,9 @@ Project Structure
          * utils         (for other logic functions)
          * screens       ( Each Page)
          * home > blocs, local_widget, home_screen.dart (like that)
-       
+         * assets        ( Resource folder for image, svg, logo )
+         * resources     ( Resource file for language eg. eng.json, my.json, ch.json)
+         
       * app.dart    ( root widget is MaterialApp or CapitinoApp , theme, locate,..)
       * main.dart   ( App Launch main widget)
       * routes.dart ( Navigtion Page management System)
