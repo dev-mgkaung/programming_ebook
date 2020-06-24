@@ -2,6 +2,9 @@
 
 Programming Ebook Collections Application (Bloc Pattern)
 
+Are You looking source code for production level or large project or bloc pattern sample code? 
+Sure , this is best practise sample code for flutter beginner. (Project structure is simply and easy to maintain)
+I suggest for you . You need to learn Bloc pattern .
 
 Project Structure
 --------
