@@ -20,6 +20,10 @@ Project Structure
       * routes.dart ( Navigtion Page management System)
   
     
+    
+ ** Bloc Pattern (Bussicness Logic Componment)
+ Reference Link   https://blog.usejournal.com/flutter-http-requests-with-dio-rxdart-and-bloc-da325ca5fe33
+ ----
   
 Screenshoot
 --------
