@@ -33,7 +33,7 @@ Project Structure
   
 Screenshoot
 --------
-  <img alt="English Unicdoe Choose" src="https://github.com/dev-mgkaung/Knowledge-NoteList/blob/gh-page/maxresdefault.jpg" width=1200 height=850 />
+  <img alt="English Unicdoe Choose" src="https://github.com/dev-mgkaung/Knowledge-NoteList/blob/gh-page/maxresdefault.jpg" width=1000 height=650 />
   
   <img alt="Screen Shot 1" src="https://github.com/dev-mgkaung/Knowledge-NoteList/blob/gh-page/one.jpg" width=210 height=450 />  <img alt="English Unicdoe Choose" src="https://github.com/dev-mgkaung/Knowledge-NoteList/blob/gh-page/two.jpg" width=210 height=450 /> <img alt="Screen Shot 1" src="https://github.com/dev-mgkaung/Knowledge-NoteList/blob/gh-page/three.jpg" width=210 height=450 />  <img alt="English Unicdoe Choose" src="https://github.com/dev-mgkaung/Knowledge-NoteList/blob/gh-page/five.jpg" width=210 height=450 />
 
