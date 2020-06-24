@@ -24,6 +24,12 @@ Project Structure
  ** Bloc Pattern (Bussicness Logic Componment)
  Reference Link   https://blog.usejournal.com/flutter-http-requests-with-dio-rxdart-and-bloc-da325ca5fe33
  ----
+ 
+ *** Features
+ 1. Themes change (Dark Mode, Light Mode)          <=>   ( Using Provider )
+ 2. Multiple Languge Support (Myanmar,English)     <=>   ( Using Localization with json file)
+ 3. Data Source from Post man mock api             <=>   ( Using Bloc, rxdrt, dio )
+ ----
   
 Screenshoot
 --------
