@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'dart:math' as math;
 import 'package:flutter/widgets.dart';
+
 class CustomCliperPath extends CustomClipper<Path> {
   final double radius;
   final double height;

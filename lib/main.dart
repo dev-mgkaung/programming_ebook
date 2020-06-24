@@ -11,5 +11,4 @@ void main() {
           fallbackLocale: Locale('en', 'US'),
           child: App()
       ));
-
 }

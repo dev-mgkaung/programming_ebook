@@ -5,8 +5,7 @@ ThemeData light = ThemeData(
     brightness: Brightness.light,
     primarySwatch: Colors.indigo,
     accentColor: Colors.pink,
-    scaffoldBackgroundColor: Color(0xfff1f1f1)
-);
+    scaffoldBackgroundColor: Color(0xfff1f1f1));
 
 ThemeData dark = ThemeData(
   brightness: Brightness.dark,
@@ -33,8 +32,7 @@ class ThemeNotifier extends ChangeNotifier {
   }
 
   _initPrefs() async {
-    if(_prefs == null)
-      _prefs = await SharedPreferences.getInstance();
+    if (_prefs == null) _prefs = await SharedPreferences.getInstance();
   }
 
   _loadFromPrefs() async {
@@ -43,9 +41,8 @@ class ThemeNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
-  _saveToPrefs()async {
+  _saveToPrefs() async {
     await _initPrefs();
     _prefs.setBool(key, _darkTheme);
   }
-
 }

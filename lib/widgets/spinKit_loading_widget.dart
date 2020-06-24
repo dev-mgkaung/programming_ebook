@@ -16,18 +16,15 @@ class SpinKitLoadingWidget extends StatelessWidget {
   }
 
   _buildBody(BuildContext context) {
-    if(index==0) {
+    if (index == 0) {
       return SpinKitChasingDots(
-        color: Theme
-            .of(context)
-            .primaryColorDark,
+        color: Theme.of(context).primaryColorDark,
       );
-    }else
-      {
-        return SpinKitSquareCircle(
-          color: Colors.cyan,
-          size: 50.0,
-        );
-      }
+    } else {
+      return SpinKitSquareCircle(
+        color: Colors.cyan,
+        size: 50.0,
+      );
+    }
   }
 }

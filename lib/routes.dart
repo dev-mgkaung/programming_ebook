@@ -1,19 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:programmingebook/screens/page/main_page.dart';
+
 class PageRouter {
   static const String home = MainScreen.routeName;
 
-  static void gotoNextPage(BuildContext context,Widget nextScreen) {
+  static void gotoNextPage(BuildContext context, Widget nextScreen) {
     Navigator.push(
       context,
       RouteTransition(
-          widget: nextScreen,
+        widget: nextScreen,
       ),
     );
   }
 
-  static void goToBackScreen(BuildContext context){
+  static void goToBackScreen(BuildContext context) {
     Navigator.pop(context);
   }
 
@@ -29,29 +30,34 @@ class PageRouter {
   }
 }
 
-
-
-class RouteTransition extends PageRouteBuilder{
+class RouteTransition extends PageRouteBuilder {
   final Widget widget;
   final bool fade;
 
-  RouteTransition({this.widget,this.fade = true}):
-        super(
-          pageBuilder:(BuildContext context, Animation<double> animation,Animation<double> secondaryAni) => widget,
-          transitionDuration: Duration(milliseconds: 100),
-          transitionsBuilder:(BuildContext context, Animation<double> animation,Animation<double> secondaryAni, Widget child){
-            if(fade){
-              return FadeTransition(opacity: animation, child: child,);
-            }
-            {
-              return SlideTransition(
-                position: Tween<Offset>(
-                  begin: const Offset(0.0, 0.0),
-                  end: Offset.zero,
-                ).animate(animation),
-                child: child,
-              );
-            }
-          }
-      );
+  RouteTransition({this.widget, this.fade = true})
+      : super(
+            pageBuilder: (BuildContext context, Animation<double> animation,
+                    Animation<double> secondaryAni) =>
+                widget,
+            transitionDuration: Duration(milliseconds: 100),
+            transitionsBuilder: (BuildContext context,
+                Animation<double> animation,
+                Animation<double> secondaryAni,
+                Widget child) {
+              if (fade) {
+                return FadeTransition(
+                  opacity: animation,
+                  child: child,
+                );
+              }
+              {
+                return SlideTransition(
+                  position: Tween<Offset>(
+                    begin: const Offset(0.0, 0.5),
+                    end: Offset.zero,
+                  ).animate(animation),
+                  child: child,
+                );
+              }
+            });
 }

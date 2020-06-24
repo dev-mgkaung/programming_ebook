@@ -1,5 +1,6 @@
 import 'package:flutter_mdetect/flutter_mdetect.dart';
 import 'package:rabbit_converter/rabbit_converter.dart';
+
 class MMTheme {
   MMTheme._();
 

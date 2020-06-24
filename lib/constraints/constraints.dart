@@ -1,14 +1,13 @@
 
-String appName = "Programming Ebook";
-String defaultFont = 'Rubik-Regular';
 
 //api
-String baseUrl = 'https://min-api.cryptocompare.com';
-int ok200 = 200;
-String category_api="https://5eef8304ad6d710016179be8.mockapi.io/api/v1/categories";
+//Reference Tutorial link https://blog.usejournal.com/flutter-http-requests-with-dio-rxdart-and-bloc-da325ca5fe33
+const String apiKey = "Your Api";
 
-//category
-String recommend="Recommend for You";
-String browse_catgory="Browse Categories";
-String category="Categories";
-String search="Search";
+const String baseUrl = "https://0a2d6a5e-119b-42f5-be58-e9ecac547c38.mock.pstmn.io";
+int ok200 = 200;
+
+//Category List
+const categorylist_url = "$baseUrl/demo";
+
+

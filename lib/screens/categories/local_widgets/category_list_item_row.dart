@@ -1,11 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:programmingebook/constraints/styles.dart';
-import 'package:programmingebook/models/category.dart';
+import 'package:programmingebook/models/category/category_model.dart';
 import 'package:programmingebook/widgets/spinKit_loading_widget.dart';
 
 class CategoryListItemRow extends StatelessWidget {
-  final Category category;
+  final CategoryModel category;
 
   CategoryListItemRow(this.category);
 
@@ -15,18 +15,18 @@ class CategoryListItemRow extends StatelessWidget {
       elevation: 1,
       child: Center(
         child: Container(
-          margin: EdgeInsets.only(right: 7, bottom: 10),
-          height: 81,
-          padding: const EdgeInsets.all(2),
-          width: MediaQuery.of(context).size.width - 50,
+          height: 80,
+          margin: const EdgeInsets.all(5),
+          padding: const EdgeInsets.all(10),
+          width: MediaQuery.of(context).size.width ,
           color: Colors.white,
           child: Row(
             children: <Widget>[
               Container(
+                margin: const EdgeInsets.all(5),
                 width: 150,
-                height: 150,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20.0),
+                  borderRadius: BorderRadius.circular(10.0),
                   child: CachedNetworkImage(
                     imageUrl: category.image,
                     placeholder: (context, url) =>
@@ -38,7 +38,6 @@ class CategoryListItemRow extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-                margin: EdgeInsets.only(right: 5),
               ),
               SizedBox(
                 width: 5.0,
