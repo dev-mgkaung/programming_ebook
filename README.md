@@ -24,6 +24,15 @@ Project Structure
       * main.dart   ( App Launch main widget)
       * routes.dart ( Navigtion Page management System)
   
+  
+ ** Basic Logic
+ 
+    If you know android knowledge , we define Activity is Page and Fragment is Screen.
+    eg. Our app have two page. Login Page and Home Page. So. Navigator route system pass form LoginPage to HomePage.
+      HomePage have four Screen .(like fragment HomeFragment,NotificationFragment...and so on)
+      ## Note that this rule only for my project structure. I dont know other people how to define for it.
+      ------
+  
     
     
  ** Bloc Pattern (Bussicness Logic Componment)
