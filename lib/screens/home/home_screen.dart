@@ -12,18 +12,17 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView(
-        physics: ClampingScrollPhysics(),
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start, children: [
-            HomeSearchBox(),
-            HomeTabBar(),
-            HomePopularList(),
-          ],)
-        ],
-      ),
+    return new ListView(
+      shrinkWrap: true,
+      physics: ClampingScrollPhysics(),
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start, children: [
+          HomeSearchBox(),
+          HomeTabBar(),
+          HomePopularList(),
+        ],)
+      ],
     );
   }
 }

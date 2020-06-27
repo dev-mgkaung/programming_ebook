@@ -58,7 +58,7 @@ class UtilsMessage {
         toastLength: Toast.LENGTH_LONG,
         gravity: ToastGravity.BOTTOM,
         timeInSecForIos: 2,
-        backgroundColor: primaryColor,
+        backgroundColor: AppColors.primaryColor,
         textColor: Colors.white,
         fontSize: 14.0);
   }
@@ -80,7 +80,7 @@ class UtilsMessage {
             )
           : null,
       duration: Duration(seconds: 2),
-      backgroundColor: primaryColor,
+      backgroundColor: AppColors.primaryColor,
     );
   }
 }

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:programmingebook/screens/page/main_page.dart';
 
 class PageRouter {
-  static const String home = MainScreen.routeName;
+  static const String home = MainPage.routeName;
 
   static void gotoNextPage(BuildContext context, Widget nextScreen) {
     Navigator.push(

@@ -9,7 +9,7 @@ class CategoryCarousalImage extends StatefulWidget {
 }
 
 class _CategoryCarousalImageState extends State<CategoryCarousalImage> {
-  int _current=0;
+  int _current = 0;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,23 +20,21 @@ class _CategoryCarousalImageState extends State<CategoryCarousalImage> {
           itemBuilder: (BuildContext context, int index) {
             return Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8.0),
-                image: DecorationImage(
-                  image: AssetImage(
-                    images[index],
-                  ),
-                  fit: BoxFit.cover,
-                )
-              ),
+                  borderRadius: BorderRadius.circular(8.0),
+                  image: DecorationImage(
+                    image: AssetImage(
+                      StringsConstants.images[index],
+                    ),
+                    fit: BoxFit.cover,
+                  )),
             );
           },
           indicatorLayout: PageIndicatorLayout.COLOR,
           autoplay: true,
-          itemCount: images.length,
+          itemCount: StringsConstants.images.length,
           layout: SwiperLayout.DEFAULT,
           pagination: new SwiperPagination(),
           control: new SwiperControl(),
         ));
   }
 }
-

@@ -12,7 +12,7 @@ class HomePopularList extends StatelessWidget {
       children: <Widget>[
         Padding(
           padding: EdgeInsets.only(left: 16, top: 10),
-          child: Text(popular_label, style: Styles.mediumTextStyle),
+          child: Text(StringsConstants.popular_label, style: Styles.mediumTextStyle),
         ),
         Container(
           margin: EdgeInsets.only(top: 10),

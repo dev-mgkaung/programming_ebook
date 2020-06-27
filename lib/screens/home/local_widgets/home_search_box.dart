@@ -17,7 +17,7 @@ class _HomeSearchBoxState extends State<HomeSearchBox> {
         //Search Bar
         Padding(
           padding: const EdgeInsets.only(top: 15, left: 16),
-          child: Text(home_label,
+          child: Text(StringsConstants.home_label,
               style: GoogleFonts.openSans(
                   color: Colors.grey,
                   fontSize: 13,
@@ -25,20 +25,20 @@ class _HomeSearchBoxState extends State<HomeSearchBox> {
         ),
         Padding(
           padding: const EdgeInsets.only(top: 15, left: 16),
-          child: Text(latest_book, style: Styles.mediumTextStyle),
+          child: Text(StringsConstants.latest_book, style: Styles.mediumTextStyle),
         ),
         Container(
           height: 35,
           margin: EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 18),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: Colors.black12,
+            color: Colors.orange,
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.1),
-                spreadRadius: 2,
-                blurRadius: 5,
-                offset: Offset(0, 2), // changes position of shadow
+                color: Colors.white.withOpacity(0.2),
+                spreadRadius: 1,
+                blurRadius: 1,
+                offset: Offset(0, 1), // changes position of shadow
               ),
             ],
           ),
@@ -52,9 +52,9 @@ class _HomeSearchBoxState extends State<HomeSearchBox> {
                   border: InputBorder.none,
                   hintText: 'Search book....',
                   hintStyle: TextStyle(
-                      color: Colors.black45,
+                      color: Colors.white,
                       fontSize: 14,
-                      fontWeight: FontWeight.w400),
+                      fontWeight: FontWeight.w900),
                 ),
               ),
               Positioned(

@@ -7,19 +7,18 @@ class Styles {
     color: Colors.deepOrange
   );
 
-  static const buttonTextStyle = TextStyle(
-    fontSize: 16.0,
-    fontWeight: FontWeight.w600,
+  static const defaultTextStyle = TextStyle(
+      fontSize: 17.0,
+      fontWeight: FontWeight.w800,
+      color: Colors.blue
   );
 
-  static const chartLabelsTextStyle = TextStyle(
-    color: Colors.grey,
-    fontSize: 14.0,
-    fontWeight: FontWeight.w500,
+  static const notiTextStyle = TextStyle(
+      fontSize: 8.0,
+      fontWeight: FontWeight.w100,
+      color: Colors.white
   );
 
-  static const tabTextStyle = TextStyle(
-    fontSize: 16.0,
-    fontWeight: FontWeight.w600,
-  );
+  static TextStyle appBarTextStyleTheme(bool isDark) =>
+      TextStyle(color: isDark ? Colors.white : Colors.black);
 }

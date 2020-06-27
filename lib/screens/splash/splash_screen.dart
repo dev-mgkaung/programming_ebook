@@ -1,10 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:programmingebook/routes.dart';
 import 'package:programmingebook/screens/onboading/onboading.dart';
-import 'package:programmingebook/screens/page/main_page.dart';
 import 'package:programmingebook/utils/mmdetect.dart';
-import 'package:programmingebook/widgets/mcircularprogress_loader.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -61,8 +60,10 @@ class _SplashScreenState extends State<SplashScreen> {
         ),
         Padding(
           padding: const EdgeInsets.only(top: 20),
-          child: CustomProgressLoader(30, 30),
-        )
+          child: SpinKitThreeBounce(
+            color: Colors.cyan,
+            size: 25.0,
+          )),
       ],
     )));
   }

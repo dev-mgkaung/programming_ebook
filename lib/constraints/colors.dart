@@ -1,16 +1,31 @@
 import 'package:flutter/material.dart';
-const Color colorBlack = Color(0xff000000);
-const Color colorRed = Color(0xffC44137);
-const Color primaryColor = Color(0xFF2196F3);
+import 'package:programmingebook/utils/hex_color.dart';
 
-const kPink50 = const Color(0xFFFEEAE6);
-const kPink100 = const Color(0xFFFEDBD0);
-const kPink300 = const Color(0xFFFBB8AC);
-const kPink400 = const Color(0xFFEAA4A4);
-const kBrown900 = const Color(0xFF442B2D);
-const kErrorRed = const Color(0xFFC5032B);
-const kWhite = const Color(0xFFFFFBFA);
-const kBackgroundWhite = Colors.white;
+class AppColors {
 
-const kCircularStopAnimationColor=const Color(0xFF42A5F5);
-const kCircularProgressColor= const Color(0xFF4DD0E1);
+  static Color get black => HexColor("#000000");
+  static Color get darkModeBlack => HexColor("#424242");
+  static Color get white => HexColor("#FFFFFF");
+  static Color get cardWhite => HexColor("#F5F5F5");
+  static Color get dividerColor => HexColor("#BDBDBD");
+  static Color get yellow => HexColor("#FFEB3B");
+
+  static const Color colorBlack = Color(0xff000000);
+  static const Color colorRed = Color(0xffC44137);
+  static const Color primaryColor = Color(0xFF2196F3);
+
+  static const kPink50 = const Color(0xFFFEEAE6);
+  static const kPink100 = const Color(0xFFFEDBD0);
+  static const kPink300 = const Color(0xFFFBB8AC);
+  static const kPink400 = const Color(0xFFEAA4A4);
+  static const kBrown900 = const Color(0xFF442B2D);
+  static const kErrorRed = const Color(0xFFC5032B);
+  static const kWhite = const Color(0xFFFFFBFA);
+  static const kCircularStopAnimationColor=const Color(0xFF42A5F5);
+  static const kCircularProgressColor= const Color(0xFF4DD0E1);
+
+  static const kBackgroundWhite = Colors.white;
+
+
+}
+

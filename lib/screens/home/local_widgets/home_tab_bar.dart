@@ -22,8 +22,8 @@ class HomeTabBar extends StatelessWidget {
               labelPadding: EdgeInsets.all(0),
               indicatorPadding: EdgeInsets.all(0),
               isScrollable: true,
-              labelColor: Colors.black,
-              unselectedLabelColor: Colors.black45,
+              labelColor: Colors.blueAccent,
+              unselectedLabelColor: Theme.of(context).backgroundColor,
               labelStyle: Styles.mediumTextStyle,
               //    unselectedLabelStyle: Styles.mediumTextStyle,
               indicator:
@@ -32,19 +32,19 @@ class HomeTabBar extends StatelessWidget {
                 Tab(
                   child: Container(
                     margin: EdgeInsets.only(right: 23),
-                    child: Text(tab_new),
+                    child: Text(StringsConstants.tab_new),
                   ),
                 ),
                 Tab(
                   child: Container(
                     margin: EdgeInsets.only(right: 23),
-                    child: Text(tab_trending),
+                    child: Text(StringsConstants.tab_trending),
                   ),
                 ),
                 Tab(
                   child: Container(
                     margin: EdgeInsets.only(right: 23),
-                    child: Text(tab_best_seller),
+                    child: Text(StringsConstants.tab_best_seller),
                   ),
                 ),
               ],
