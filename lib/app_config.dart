@@ -11,8 +11,8 @@ void setupAppConfig() {
   appConfig.registerFactory(() => AppRepository());
 
   //Register ViewModel
-
+  appConfig.registerFactory(() => PopularViewModel(appConfig<AppRepository>()));
   appConfig.registerFactory(() => CategoryViewModel(appConfig<AppRepository>()));
 
-  appConfig.registerFactory(() => PopularViewModel(appConfig<AppRepository>()));
+
 }

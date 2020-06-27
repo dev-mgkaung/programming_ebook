@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:programmingebook/routes.dart';
 import 'package:programmingebook/screens/onboading/onboading.dart';
+import 'package:programmingebook/screens/page/main_page.dart';
+import 'package:programmingebook/services/networks/repositories/app_repository.dart';
 import 'package:programmingebook/utils/mmdetect.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -13,10 +15,15 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   void initState() {
+    AppRepository   appRepository = AppRepository();
     super.initState();
     _mockCheckForSession().then((status) {
       if (status) {
-        PageRouter.pushPageReplacement(context, OnBoardingPage());
+        if(appRepository.isOnBoarded()==false) {
+          PageRouter.pushPageReplacement(context, OnBoardingPage());
+        }else{
+          PageRouter.pushPageReplacement(context, MainPage());
+        }
       } else {}
     });
   }
@@ -29,6 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
         body: Center(
             child: Column(

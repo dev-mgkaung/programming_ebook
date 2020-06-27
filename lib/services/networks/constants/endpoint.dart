@@ -11,7 +11,7 @@ class Endpoints {
   static const int connectionTimeout = 3000;
 
   // popular book list endpoints
-  static const String bookPopular = "/popularlist";
+  static const String bookPopular = "/demo";
 
   // popular category list endpoints
   static const String bookCategory = "/categories";

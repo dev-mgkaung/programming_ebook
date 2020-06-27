@@ -3,9 +3,10 @@ import 'dart:convert';
 
 import 'package:programmingebook/services/base/base_repository.dart';
 import 'package:programmingebook/services/networks/constants/endpoint.dart';
+import 'package:programmingebook/services/persistances/data/sharedpref/constants/preferences.dart';
+import 'package:programmingebook/services/persistances/data/sharedpref/preference_connector.dart';
 import '../api_clients/rest_client.dart';
-import '../data/sharedpref/constants/preferences.dart';
-import '../data/sharedpref/preference_connector.dart';
+
 import 'package:programmingebook/models/network_model/popular/popular_book_response.dart';
 import 'package:programmingebook/models/network_model/popular/popular_book.dart';
 import 'package:programmingebook/models/network_model/category/category_book.dart';
@@ -25,8 +26,7 @@ class AppRepository extends BaseRepository {
 
   @override
   Future<List<PopularBook>> fetchPopularBookList() async {
-    final response =
-        await _helper.get("${Endpoints.bookPopular}");
+    final response = await _helper.get("${Endpoints.bookPopular}");
     return PopularBookResponse.fromJson(response).results;
   }
 
@@ -35,7 +35,6 @@ class AppRepository extends BaseRepository {
   Future<List<CategoryBook>> fetchCategoryBookList() async {
     final response = await _helper.get("${Endpoints.bookCategory}");
     return CategoryResponse.fromJson(response).results;
-
   }
 
 
@@ -44,5 +43,8 @@ class AppRepository extends BaseRepository {
     return preferenceConnector.getBool(PreferenceConstants.is_onboarding);
   }
 
-
+  @override
+  void setOnBoarded(bool value) {
+     preferenceConnector.setBool(PreferenceConstants.is_onboarding,value);
+  }
 }

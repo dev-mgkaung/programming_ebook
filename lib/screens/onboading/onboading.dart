@@ -5,7 +5,7 @@ import 'package:programmingebook/constraints/styles.dart';
 import 'package:programmingebook/routes.dart';
 import 'package:programmingebook/screens/onboading/model/onboard_model.dart';
 import 'package:programmingebook/screens/page/main_page.dart';
-
+import 'package:programmingebook/services/networks/repositories/app_repository.dart';
 class OnBoardingPage extends StatefulWidget {
   @override
   _OnBoardingPageState createState() => _OnBoardingPageState();
@@ -13,8 +13,9 @@ class OnBoardingPage extends StatefulWidget {
 
 class _OnBoardingPageState extends State<OnBoardingPage> {
   final introKey = GlobalKey<IntroductionScreenState>();
-
+  AppRepository   appRepository = AppRepository();
   void _onIntroEnd(context) {
+    appRepository.setOnBoarded(true);
     PageRouter.pushPageReplacement(context, MainPage());
   }
 
@@ -27,6 +28,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
 
   @override
   Widget build(BuildContext context) {
+
     const pageDecoration = const PageDecoration(
       titleTextStyle: TextStyle(
           fontSize: 28.0,
@@ -48,7 +50,10 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                 decoration: pageDecoration,
               ))
           .toList(),
-      onDone: () => _onIntroEnd(context),
+      onDone: () =>
+      {
+        _onIntroEnd(context),
+      },
       //onSkip: () => _onIntroEnd(context), // You can override onSkip callback
       showSkipButton: true,
       skipFlex: 0,

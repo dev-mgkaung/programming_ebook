@@ -9,16 +9,15 @@ class CategoryBook {
 
     CategoryBook.fromJson(Map<String, dynamic> json) {
     //  id = json['id'] as int;
-      name = json['name'] as String;
-      total = json['total'] as String;
-      description = json['description'] as String;
-      image = json['image'] as String;
+      name = json['name'];
+      total = json['total'] ;
+      description = json['description'];
+      image = json['image'] ;
     }
 
     Map<String, dynamic> toJson() {
       final Map<String, dynamic> data = new Map<String, dynamic>();
-     // data['id'] = this.id as int;
-      data['name'] = this.name as String;
+      data['name'] = this.name ;
       data['total'] = this.total;
       data['description'] = this.description;
       data['image'] = this.image;
