@@ -19,6 +19,7 @@ class CategoryScreen extends StatefulWidget {
 }
 
 class _State extends State<CategoryScreen> with BaseScreenMixin {
+
   @override
   Widget build(BuildContext context) {
     return BaseView<CategoryViewModel>(
@@ -80,18 +81,14 @@ class _State extends State<CategoryScreen> with BaseScreenMixin {
                   ApiStreamBuilder<List<CategoryBook>>(
                     stream: categoryViewModel.apiDataSinkStream,
                     loadingWidget: (value) {
-                      showToast("loading value", context);
                       return buildLoadingWidget();},
                     errorWidget: (value) {
-                      print("errordata=$value");
-                      showToast(value.toString(), context);
                       return buildErrorWidget(
                         errorMessage: value.toString(),
                         onRetryPressed: () => categoryViewModel.fetchCategoryList(),
                       );
                     },
                     dataWidget: (value) {
-                      showToast("Data Show", context);
                       return CategoryList(categorylist: value);},
                   ),
                   SizedBox(

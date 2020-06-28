@@ -4,7 +4,7 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="programmingebook"
-        android:icon="@drawable/logo">
+        android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
