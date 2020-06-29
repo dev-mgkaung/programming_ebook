@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="mgkaung.fllutter.programmingebook">
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="programmingebook"
