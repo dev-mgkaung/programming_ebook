@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:programmingebook/screens/page/about.dart';
 import 'package:programmingebook/utils/asset_path.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class AppDrawer extends StatelessWidget {
   Widget _createHeader() {
@@ -35,15 +36,15 @@ class AppDrawer extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-              bottom: 12.0,
-              right: 16.0,
-              child: Text("Mg Kaung",
-                  style: TextStyle(
-                      color: Colors.blue,
-                      fontSize: 20.0,
-                      fontFamily: 'GalleryIcons',
-                      fontWeight: FontWeight.w700))),
+//          Positioned(
+//              bottom: 12.0,
+//              right: 16.0,
+//              child: Text("Mg Kaung",
+//                  style: TextStyle(
+//                      color: Colors.blue,
+//                      fontSize: 20.0,
+//                      fontFamily: 'GalleryIcons',
+//                      fontWeight: FontWeight.w700))),
         ]));
   }
 
@@ -72,25 +73,25 @@ class AppDrawer extends StatelessWidget {
           _createHeader(),
           _createDrawerItem(
             icon: Icons.home,
-            text: 'Home',
+            text: 'home_menu'.tr().toString(),
           ),
           _createDrawerItem(
             icon: Icons.new_releases,
-            text: 'New Books',
+            text: 'new_menu'.tr().toString(),
           ),
           _createDrawerItem(
             icon: Icons.card_giftcard,
-            text: 'Discount Books',
+            text: 'discount_menu'.tr().toString(),
           ),
           Divider(),
-          _createDrawerItem(icon: Icons.book, text: 'Free Book'),
-          _createDrawerItem(icon: Icons.file_download, text: 'Download'),
-          _createDrawerItem(icon: Icons.picture_as_pdf, text: 'Pdf Viewer'),
+          _createDrawerItem(icon: Icons.book, text: 'free_book_menu'.tr().toString()),
+          _createDrawerItem(icon: Icons.file_download, text: 'favourite_menu'.tr().toString()),
+          _createDrawerItem(icon: Icons.picture_as_pdf, text: 'pdf_menu'.tr().toString()),
           Divider(),
-          _createDrawerItem(icon: Icons.bug_report, text: 'Report an issue'),
+          _createDrawerItem(icon: Icons.bug_report, text: 'report_menu'.tr().toString()),
           _createDrawerItem(
               icon: Icons.sentiment_very_satisfied,
-              text: 'About',
+              text: 'about_menu'.tr().toString(),
               onTap: () {
                 AboutPage.dialogShow(context);
               }),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:programmingebook/constraints/styles.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:programmingebook/utils/asset_path.dart';
 import 'package:programmingebook/utils/url_launcher.dart';
 
@@ -11,7 +11,7 @@ class AboutPage {
     showAboutDialog(
         context: context,
         applicationName: 'Programming Ebook',
-        applicationVersion: '1.0.0',
+        applicationVersion: 'about_version'.tr().toString(),
         applicationIcon: Image(
           image: AssetImage(
             AssetsPath.logopath + "logo.png",
@@ -19,8 +19,7 @@ class AboutPage {
           width: 40,
           height: 40,
         ),
-        applicationLegalese:
-            'Hey Guy , Nice to meet you again. This application is the Flutter bilopalte template for production level project.This project was created by  bloc pattern and viewmodel. Readable and easy to maintain',
+        applicationLegalese: 'about_desc'.tr().toString(),
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 10.0),

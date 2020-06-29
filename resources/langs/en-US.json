@@ -6,5 +6,15 @@
   "myanmar" : "Myanmar (Unicode)",
   "cancel" : "Cancel",
   "search": "Search",
-  "browse": "Browse Books Category"
+  "browse": "Browse Books Category",
+  "home_menu": "Home",
+  "new_menu" : "New Books",
+  "discount_menu": "Discount Books",
+  "free_book_menu": "Free Books",
+  "favourite_menu": "Favourites",
+  "report_menu": "Report an issue",
+  "pdf_menu": "PDF Viewer",
+  "about_menu": "About",
+  "about_version": "1.0",
+  "about_desc":"Hey Guy , Nice to meet you again. This application is the Flutter bilopalte template for production level project.This project was created by  bloc pattern and viewmodel. Readable and easy to maintain"
 }
