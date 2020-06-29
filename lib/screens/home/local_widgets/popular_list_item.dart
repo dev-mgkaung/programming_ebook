@@ -1,6 +1,8 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:programmingebook/constraints/styles.dart';
 import 'package:programmingebook/models/network_model/popular/popular_book.dart';
+import 'package:programmingebook/widgets/spinKit_loading_widget.dart';
 
 class PopularList extends StatelessWidget {
   final List<PopularBook> popularlist;
@@ -14,8 +16,7 @@ class PopularList extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         itemCount: popularlist.length,
         shrinkWrap: true,
-        itemBuilder: (context, index) =>
-            PopularListItemRow(popularlist[index], context));
+        itemBuilder: (context, index) => PopularListItemRow(popularlist[index], context));
   }
 
   Widget PopularListItemRow(PopularBook popularBook, BuildContext context) {
@@ -29,13 +30,17 @@ class PopularList extends StatelessWidget {
           child: Row(
             children: <Widget>[
               Container(
-                child: ClipRRect(
+                child:ClipRRect(
                   borderRadius: BorderRadius.circular(10.0),
-                  child: Image.network(
-                    popularBook.image,
+                  child: CachedNetworkImage(
+                    imageUrl: popularBook.image,
+                    placeholder: (context, url) =>
+                        SpinKitLoadingWidget(isImage: false, index: 0),
+                    errorWidget: (context, url, error) => Image.asset(
+                      "assets/images/onboard3.png",
+                      fit: BoxFit.cover,
+                    ),
                     fit: BoxFit.cover,
-                    height: 81,
-                    width: 68,
                   ),
                 ),
                 margin: EdgeInsets.only(right: 5),
