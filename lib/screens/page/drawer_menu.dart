@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:programmingebook/screens/page/about.dart';
+import 'package:programmingebook/utils/asset_path.dart';
 
 class AppDrawer extends StatelessWidget {
   Widget _createHeader() {
@@ -9,7 +11,7 @@ class AppDrawer extends StatelessWidget {
         decoration: BoxDecoration(
             image: DecorationImage(
                 fit: BoxFit.cover,
-                image:  AssetImage('assets/images/background.jpg'))),
+                image:  AssetImage(AssetsPath.imagepath+'background.jpg'))),
         child: Stack(children: <Widget>[
           Positioned(
             bottom: 17.0,
@@ -20,7 +22,7 @@ class AppDrawer extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(70),
                 image: DecorationImage(
-                  image: AssetImage("assets/images/mgkaung.jpg")
+                  image: AssetImage(AssetsPath.imagepath+"mgkaung.jpg")
                 ),
                 boxShadow: [
                   BoxShadow(
@@ -77,14 +79,7 @@ class AppDrawer extends StatelessWidget {
           Divider(),
           _createDrawerItem(icon: Icons.bug_report, text: 'Report an issue'),
           _createDrawerItem(icon: Icons.sentiment_very_satisfied,text: 'About',onTap: (){
-            showAboutDialog(
-              context: context,
-              applicationName: 'Programming Ebook',
-              applicationVersion: '1.0.0',
-              applicationIcon: Image(image: AssetImage("assets/logo/logo.png"),),
-              applicationLegalese: 'Hey Guy , Nice to meet you again. This application is the first project of my creation.This pj was developeb by flutter lanugage with bloc pattern. Readable and easy to maintain',
-            //  children: aboutBoxChildren,
-            );
+            AboutPage.dialogShow(context);
           }),
 
         ],

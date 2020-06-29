@@ -17,7 +17,7 @@ class CategoryList extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       itemCount: categorylist.length,
       shrinkWrap: true,
-      padding: new EdgeInsets.symmetric(vertical: 16.0),
+      padding: new EdgeInsets.symmetric(vertical: 2.0),
       itemBuilder: (context, index) =>
           CategoryListItemRow(categorylist[index],context),
     );
@@ -31,7 +31,7 @@ class CategoryList extends StatelessWidget {
       child: Center(
         child: Container(
           height: 80,
-          margin: const EdgeInsets.all(5),
+          margin: const EdgeInsets.all(1),
           padding: const EdgeInsets.all(1),
           width: MediaQuery.of(context).size.width ,
           color: Colors.white,
