@@ -3,8 +3,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:programmingebook/constraints/strings.dart';
 import 'package:programmingebook/constraints/styles.dart';
+import 'package:programmingebook/models/network_model/book/book_model.dart';
+import 'package:programmingebook/routes.dart';
 import 'package:programmingebook/widgets/circular_dot_indicator.dart';
 import 'package:programmingebook/widgets/spinKit_loading_widget.dart';
+import 'package:programmingebook/screens/bookdetail/book_detail_page.dart';
 
 class HomeTabBar extends StatelessWidget {
   @override
@@ -67,6 +70,7 @@ class HomeTabBar extends StatelessWidget {
                         splashColor: Colors.blue.withAlpha(30),
                         onTap: () {
                           print('Card tapped.');
+                          PageRouter.gotoNextPage(context, BookDetailPage(booklist.books[0]));
                         },
                         child: Container(
                           width: 138,
