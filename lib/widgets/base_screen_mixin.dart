@@ -60,8 +60,7 @@ mixin BaseScreenMixin {
       msg: msg,
       toastLength: Toast.LENGTH_SHORT,
       gravity: ToastGravity.BOTTOM,
-      // timeInSecForIosWeb: 1,
-      backgroundColor: Colors.red,
+      backgroundColor: Colors.blue,
       textColor: Theme.of(context).textTheme.caption.color,
       fontSize: 16.0,
     );
