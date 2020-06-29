@@ -50,7 +50,7 @@ class _State extends State<CategoryScreen> with BaseScreenMixin {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 16, top: 6, bottom: 6),
-                    child: Text(StringsConstants.recommend,
+                    child: Text('recommend'.tr().toString(),
                         style: Styles.mediumTextStyle),
                   ),
                   CategoryCarousalImage(),

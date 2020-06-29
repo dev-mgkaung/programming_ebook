@@ -24,7 +24,7 @@ Widget build(BuildContext context) {
     child: Column(
       children: <Widget>[
         SizedBox(
-          height: 40,
+          height: 20,
         ),
         Align(
           alignment: Alignment.centerRight,

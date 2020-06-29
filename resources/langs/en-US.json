@@ -15,6 +15,18 @@
   "report_menu": "Report an issue",
   "pdf_menu": "PDF Viewer",
   "about_menu": "About",
+
+  "account_btn_nav": "Account",
+  "home_btn_nav": "Home",
+  "cart_btn_nav": "Cart",
+  "book_btn_nav": "Books",
+  "popular": "Popular Book List",
+  "search": "Search",
+  "recommend": "Recommend for you",
+  "latest_book": "Discover Latest Book",
+  "tab_new": "New",
+  "tab_trending": "Trending",
+  "tab_best_seller": "Best Seller",
   "about_version": "1.0",
   "about_desc":"Hey Guy , Nice to meet you again. This application is the Flutter bilopalte template for production level project.This project was created by  bloc pattern and viewmodel. Readable and easy to maintain"
 }

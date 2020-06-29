@@ -8,6 +8,7 @@ import 'package:programmingebook/screens/categories/category_screen.dart';
 import 'package:programmingebook/screens/home/home_screen.dart';
 import 'package:programmingebook/screens/page/drawer_menu.dart';
 import 'package:programmingebook/screens/settings/settings_screen.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class MainPage extends StatefulWidget {
   static const String routeName = '/main';
@@ -72,7 +73,7 @@ class _MainPageState extends State<MainPage> {
             tabs: [
               TabData(
                   iconData: Icons.home,
-                  title: "Home",
+                  title: 'home_btn_nav'.tr().toString(),
                   onclick: () {
                     final FancyBottomNavigationState fState =
                         _globalKey.currentState as FancyBottomNavigationState;
@@ -80,7 +81,7 @@ class _MainPageState extends State<MainPage> {
                   }),
               TabData(
                   iconData: Icons.library_books,
-                  title: "Books",
+                  title: 'book_btn_nav'.tr().toString(),
                   onclick: () {
                     final FancyBottomNavigationState fState =
                         _globalKey.currentState as FancyBottomNavigationState;
@@ -88,7 +89,7 @@ class _MainPageState extends State<MainPage> {
                   }),
               TabData(
                   iconData: Icons.shopping_cart,
-                  title: "Cart",
+                  title: 'cart_btn_nav'.tr().toString(),
                   onclick: () {
                     final FancyBottomNavigationState fState =
                         _globalKey.currentState as FancyBottomNavigationState;
@@ -96,7 +97,7 @@ class _MainPageState extends State<MainPage> {
                   }),
               TabData(
                   iconData: Icons.account_circle,
-                  title: "Profile",
+                  title: 'account_btn_nav'.tr().toString(),
                   onclick: () {
                     final FancyBottomNavigationState fState =
                         _globalKey.currentState as FancyBottomNavigationState;

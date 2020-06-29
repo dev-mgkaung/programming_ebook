@@ -36,15 +36,6 @@ class AppDrawer extends StatelessWidget {
               ),
             ),
           ),
-//          Positioned(
-//              bottom: 12.0,
-//              right: 16.0,
-//              child: Text("Mg Kaung",
-//                  style: TextStyle(
-//                      color: Colors.blue,
-//                      fontSize: 20.0,
-//                      fontFamily: 'GalleryIcons',
-//                      fontWeight: FontWeight.w700))),
         ]));
   }
 

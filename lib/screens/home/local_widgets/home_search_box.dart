@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:programmingebook/constraints/strings.dart';
 import 'package:programmingebook/constraints/styles.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class HomeSearchBox extends StatefulWidget {
   @override
@@ -17,7 +17,7 @@ class _HomeSearchBoxState extends State<HomeSearchBox> {
         //Search Bar
         Padding(
           padding: const EdgeInsets.only(top: 15, left: 16),
-          child: Text(StringsConstants.home_label,
+          child: Text('Hi Mg Kaung',
               style: GoogleFonts.openSans(
                   color: Colors.grey,
                   fontSize: 13,
@@ -26,11 +26,11 @@ class _HomeSearchBoxState extends State<HomeSearchBox> {
         Padding(
           padding: const EdgeInsets.only(top: 15, left: 16),
           child:
-              Text(StringsConstants.latest_book, style: Styles.mediumTextStyle),
+              Text('latest_book'.tr().toString(), style: Styles.mediumTextStyle),
         ),
         Container(
           height: 35,
-          margin: EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 18),
+          margin: EdgeInsets.only(left: 16, right: 16, top: 7, bottom: 18),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: Colors.orange,
@@ -49,9 +49,9 @@ class _HomeSearchBoxState extends State<HomeSearchBox> {
                 maxLengthEnforced: true,
                 style: Styles.mediumTextStyle,
                 decoration: InputDecoration(
-                  contentPadding: EdgeInsets.fromLTRB(16, 10, 10, 16),
+                  contentPadding: EdgeInsets.only(left: 16,right: 16,bottom: 10),
                   border: InputBorder.none,
-                  hintText: 'Search book....',
+                  hintText: 'search'.tr().toString(),
                   hintStyle: TextStyle(
                       color: Colors.white,
                       fontSize: 14,
@@ -64,8 +64,8 @@ class _HomeSearchBoxState extends State<HomeSearchBox> {
                     width: 35,
                     height: 35,
                     decoration: BoxDecoration(
-                      color: Colors.orange,
-                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.blueAccent,
+                      borderRadius: BorderRadius.circular(8),
                     ),
                     child: Center(
                       child: IconButton(

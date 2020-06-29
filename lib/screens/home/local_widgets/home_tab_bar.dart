@@ -1,13 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:programmingebook/constraints/strings.dart';
 import 'package:programmingebook/constraints/styles.dart';
 import 'package:programmingebook/models/network_model/book/book_model.dart';
 import 'package:programmingebook/routes.dart';
 import 'package:programmingebook/widgets/circular_dot_indicator.dart';
 import 'package:programmingebook/widgets/spinKit_loading_widget.dart';
 import 'package:programmingebook/screens/bookdetail/book_detail_page.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class HomeTabBar extends StatelessWidget {
   @override
@@ -16,7 +16,7 @@ class HomeTabBar extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          height: 25,
+          height: 32,
           margin: EdgeInsets.only(top: 10),
           padding: EdgeInsets.only(left: 16),
           child: DefaultTabController(
@@ -28,26 +28,26 @@ class HomeTabBar extends StatelessWidget {
               labelColor: Colors.blueAccent,
               unselectedLabelColor: Theme.of(context).backgroundColor,
               labelStyle: Styles.mediumTextStyle,
-              //    unselectedLabelStyle: Styles.mediumTextStyle,
+              unselectedLabelStyle: Styles.mediumTextStyle,
               indicator:
                   CircleTabIndicator(color: Colors.deepOrangeAccent, radius: 2),
               tabs: <Widget>[
                 Tab(
                   child: Container(
                     margin: EdgeInsets.only(right: 23),
-                    child: Text(StringsConstants.tab_new),
+                    child: Text('tab_new'.tr().toString()),
                   ),
                 ),
                 Tab(
                   child: Container(
                     margin: EdgeInsets.only(right: 23),
-                    child: Text(StringsConstants.tab_trending),
+                    child: Text('tab_trending'.tr().toString()),
                   ),
                 ),
                 Tab(
                   child: Container(
                     margin: EdgeInsets.only(right: 23),
-                    child: Text(StringsConstants.tab_best_seller),
+                    child: Text('tab_best_seller'.tr().toString()),
                   ),
                 ),
               ],
@@ -69,7 +69,6 @@ class HomeTabBar extends StatelessWidget {
                     child: InkWell(
                         splashColor: Colors.blue.withAlpha(30),
                         onTap: () {
-                          print('Card tapped.');
                           PageRouter.gotoNextPage(context, BookDetailPage(booklist.books[0]));
                         },
                         child: Container(
