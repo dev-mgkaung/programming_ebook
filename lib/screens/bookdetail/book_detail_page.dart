@@ -29,43 +29,43 @@ class _BookDetailPageState extends State<BookDetailPage> {
 
   @override
   Widget build(BuildContext context) {
-    return  SafeArea(
-      child: Scaffold(
-        appBar:  AppBar(
-          elevation: 0,
-          backgroundColor: Colors.white,
-          leading: BackPressIcon(),
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(Icons.shopping_cart,color: Colors.blueAccent,),
+    return MultiBlocProvider(
+        providers: [
+          BlocProvider<AddToCartBloc>(
+            create: (BuildContext context) => AddToCartBloc(),
+          ),
+        ],
+        child:  SafeArea(
+          child: Scaffold(
+            appBar:  AppBar(
+              elevation: 0,
+              backgroundColor: Colors.white,
+              leading: BackPressIcon(),
+              actions: <Widget>[
+                IconButton(
+                  icon: Icon(Icons.shopping_cart,color: Colors.blueAccent,),
+                ),
+                IconButton(
+                  icon: Icon(Icons.favorite,color: Colors.blueAccent,),
+                ),
+                IconButton(
+                  icon: Icon(Icons.share,color: Colors.blueAccent,),
+                ),
+              ],
             ),
-            IconButton(
-              icon: Icon(Icons.favorite,color: Colors.blueAccent,),
-            ),
-            IconButton(
-              icon: Icon(Icons.share,color: Colors.blueAccent,),
-            ),
-          ],
-        ),
 
-        body: MultiBlocProvider(
-          providers: [
-            BlocProvider<AddToCartBloc>(
-              create: (BuildContext context) => AddToCartBloc(),
+            body: BlocBuilder<AddToCartBloc, String>(
+                builder: (context, count) {
+                  return DetailsPageBody(widget.bookObject);
+                }
             ),
-//            BlocProvider<BlocB>(
-//              create: (BuildContext context) => BlocB(),
-//            ),
-//            BlocProvider<BlocC>(
-//              create: (BuildContext context) => BlocC(),
-//            ),
-          ],
-          child: DetailsPageBody(widget.bookObject),
-        ),
-        bottomNavigationBar: BottomBar(widget.bookObject),
-      ),
 
+            bottomNavigationBar: BottomBar(widget.bookObject),
+          ),
+
+        ),
     );
+
   }
 
 }

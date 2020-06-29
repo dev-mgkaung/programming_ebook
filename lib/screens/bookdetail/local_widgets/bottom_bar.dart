@@ -27,7 +27,8 @@ class _BottomBarState extends State<BottomBar> {
                   width: 1,
                 ))),
         child: Row(
-          children: <Widget>[PriceWidget(widget: widget), AddButton()],
+          children: <Widget>[PriceWidget(widget: widget), AddButton()
+          ],
         ),
       ),
     );

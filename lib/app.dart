@@ -9,8 +9,6 @@ import 'package:provider/provider.dart';
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations(
-        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
     return ChangeNotifierProvider(
       create: (_) => ThemeNotifier(),
@@ -23,7 +21,7 @@ class App extends StatelessWidget {
             locale: context.locale,
             debugShowCheckedModeBanner: false,
             theme: notifier.darkTheme ? dark : light,
-            home: SplashScreen(),
+            home:  SplashScreen()
           );
         },
       ),

@@ -20,7 +20,7 @@ class PriceWidget extends StatelessWidget {
                   fontWeight: FontWeight.w500)),
           TextSpan(text: "   "),
           TextSpan(
-              text: "\$" + (widget.bookObject.price + 5.45).toString(),
+              text: "\$" + (widget.bookObject.price + 1.45).toString(),
               style: TextStyle(
                   color: Colors.black26,
                   fontSize: 15,
