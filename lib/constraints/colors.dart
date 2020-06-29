@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:programmingebook/utils/hex_color.dart';
 
 class AppColors {
-
   static Color get black => HexColor("#000000");
   static Color get darkModeBlack => HexColor("#424242");
   static Color get white => HexColor("#FFFFFF");
@@ -21,11 +20,8 @@ class AppColors {
   static const kBrown900 = const Color(0xFF442B2D);
   static const kErrorRed = const Color(0xFFC5032B);
   static const kWhite = const Color(0xFFFFFBFA);
-  static const kCircularStopAnimationColor=const Color(0xFF42A5F5);
-  static const kCircularProgressColor= const Color(0xFF4DD0E1);
+  static const kCircularStopAnimationColor = const Color(0xFF42A5F5);
+  static const kCircularProgressColor = const Color(0xFF4DD0E1);
 
   static const kBackgroundWhite = Colors.white;
-
-
 }
-

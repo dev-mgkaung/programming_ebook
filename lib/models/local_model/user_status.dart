@@ -4,7 +4,8 @@
 
 import 'dart:convert';
 
-UserStatus userStatusFromJson(String str) => UserStatus.fromJson(json.decode(str));
+UserStatus userStatusFromJson(String str) =>
+    UserStatus.fromJson(json.decode(str));
 
 String userStatusToJson(UserStatus data) => json.encode(data.toJson());
 
@@ -18,14 +19,14 @@ class UserStatus {
   });
 
   factory UserStatus.fromJson(Map<String, dynamic> json) => UserStatus(
-    isOnline: json["isOnline"],
-    typingstatus: Typingstatus.fromJson(json["typingstatus"]),
-  );
+        isOnline: json["isOnline"],
+        typingstatus: Typingstatus.fromJson(json["typingstatus"]),
+      );
 
   Map<String, dynamic> toJson() => {
-    "isOnline": isOnline,
-    "typingstatus": typingstatus.toJson(),
-  };
+        "isOnline": isOnline,
+        "typingstatus": typingstatus.toJson(),
+      };
 }
 
 class Typingstatus {
@@ -38,12 +39,12 @@ class Typingstatus {
   });
 
   factory Typingstatus.fromJson(Map<String, dynamic> json) => Typingstatus(
-    isTyping: json["isTyping"],
-    forUsername: json["forUsername"],
-  );
+        isTyping: json["isTyping"],
+        forUsername: json["forUsername"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "isTyping": isTyping,
-    "forUsername": forUsername,
-  };
+        "isTyping": isTyping,
+        "forUsername": forUsername,
+      };
 }

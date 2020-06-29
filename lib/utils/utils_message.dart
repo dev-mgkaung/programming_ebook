@@ -8,7 +8,6 @@ import 'package:programmingebook/routes.dart';
 import 'package:programmingebook/utils/mmdetect.dart';
 
 class UtilsMessage {
-
   static void ChangeLanguage(String languge, BuildContext context) {
     if (languge == 'my') {
       EasyLocalization.of(context).locale = Locale('my');

@@ -1,10 +1,9 @@
 import 'dart:async';
 import 'api_response.dart';
 
-
 class BaseApiBloc<T> {
   StreamController _streamController =
-  StreamController<ApiResponse<T>>.broadcast();
+      StreamController<ApiResponse<T>>.broadcast();
 
   StreamSink<ApiResponse<T>> get apiDataSink => _streamController.sink;
 
@@ -23,7 +22,7 @@ class BaseApiBloc<T> {
   }
 
   void addErrorToStream(Exception e) {
-  //  print(e.toString());
+     print(e.toString());
     apiDataSink.add(ApiResponse.error(e));
   }
 }

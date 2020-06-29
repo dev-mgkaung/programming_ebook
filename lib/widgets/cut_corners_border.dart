@@ -1,4 +1,3 @@
-
 import 'dart:ui' show lerpDouble;
 
 import 'package:flutter/material.dart';

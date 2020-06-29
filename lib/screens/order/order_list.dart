@@ -15,10 +15,22 @@ class _MyOrderState extends State<MyOrder> {
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.deepOrangeAccent,
-          leading: IconButton(icon: Icon(Icons.arrow_back_ios,color: Colors.white),onPressed: (){PageRouter.goToBackScreen(context);},),
-          title: Text("My Order",style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.w600),),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios, color: Colors.white),
+            onPressed: () {
+              PageRouter.goToBackScreen(context);
+            },
+          ),
+          title: Text(
+            "My Order",
+            style: TextStyle(
+                color: Colors.white, fontSize: 15, fontWeight: FontWeight.w600),
+          ),
           actions: <Widget>[
-            IconButton(icon: Icon(Icons.shopping_cart,color: Colors.deepPurple),onPressed: (){},)
+            IconButton(
+              icon: Icon(Icons.shopping_cart, color: Colors.deepPurple),
+              onPressed: () {},
+            )
           ],
         ),
         body: Container(
@@ -38,107 +50,166 @@ class _MyOrderState extends State<MyOrder> {
                         margin: const EdgeInsets.all(5),
                         child: InkWell(
                           child: Container(
-                            padding: const EdgeInsets.only(top: 20,right: 10,left: 10,bottom: 10),
+                            padding: const EdgeInsets.only(
+                                top: 20, right: 10, left: 10, bottom: 10),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                               Padding(
-                                 padding: const EdgeInsets.all(8.0),
-                                 child: Row(
-                                   children: <Widget>[
-                                     Expanded(
-                                       child: RichText(
-                                         text: TextSpan(
-                                           text: 'Order ID',
-                                           style: DefaultTextStyle.of(context).style,
-                                           children: <TextSpan>[
-                                             TextSpan(text: ' # ', style: TextStyle(fontWeight: FontWeight.bold,color: Colors.red)),
-                                             TextSpan(text: ' 88491 ', style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold,color: Colors.red)),
-                                           ],
-                                         ),
-                                       ),
-                                     ),
-                                     Expanded(
-                                       child: RichText(
-                                         text: TextSpan(
-                                           text: 'Order Date',
-                                           style: DefaultTextStyle.of(context).style,
-                                           children: <TextSpan>[
-                                             TextSpan(text: ' # ', style: TextStyle(fontWeight: FontWeight.bold,color: Colors.red)),
-                                             TextSpan(text: ' 23/6/2020 ', style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold,color: Colors.red)),
-                                           ],
-                                         ),
-                                       ),
-                                     )
-
-                                   ],
-                                 ),
-                               ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Row(
+                                    children: <Widget>[
+                                      Expanded(
+                                        child: RichText(
+                                          text: TextSpan(
+                                            text: 'Order ID',
+                                            style: DefaultTextStyle.of(context)
+                                                .style,
+                                            children: <TextSpan>[
+                                              TextSpan(
+                                                  text: ' # ',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.red)),
+                                              TextSpan(
+                                                  text: ' 88491 ',
+                                                  style: TextStyle(
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.red)),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: RichText(
+                                          text: TextSpan(
+                                            text: 'Order Date',
+                                            style: DefaultTextStyle.of(context)
+                                                .style,
+                                            children: <TextSpan>[
+                                              TextSpan(
+                                                  text: ' # ',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.red)),
+                                              TextSpan(
+                                                  text: ' 23/6/2020 ',
+                                                  style: TextStyle(
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.red)),
+                                            ],
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
                                 new ListView.builder(
                                     itemCount: 2,
                                     shrinkWrap: true,
-                                    itemBuilder: (context,index){
+                                    itemBuilder: (context, index) {
                                       return Container(
                                         child: Column(
                                           children: <Widget>[
                                             Row(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
                                               children: <Widget>[
-                                                Text(
-                                                    "Product Name",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black54)
-                                                ),
-                                                Text(
-                                                    "Beet Roots",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black54)
-                                                ),
+                                                Text("Product Name",
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors.black54)),
+                                                Text("Beet Roots",
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors.black54)),
                                               ],
                                             ),
                                             Row(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
                                               children: <Widget>[
-                                                Text(
-                                                    "Quality",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black54)
-                                                ),
-                                                Text(
-                                                    "10",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black54)
-                                                ),
+                                                Text("Quality",
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors.black54)),
+                                                Text("10",
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors.black54)),
                                               ],
                                             ),
                                             Row(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
                                               children: <Widget>[
-                                                Text(
-                                                    "Price",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black54)
-                                                ),
-                                                Text(
-                                                    "10000 kyats",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black54)
-                                                ),
+                                                Text("Price",
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors.black54)),
+                                                Text("10000 kyats",
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors.black54)),
                                               ],
                                             ),
                                             Row(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
                                               children: <Widget>[
-                                                Text(
-                                                    "Discount",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black54)
-                                                ),
-                                                Text(
-                                                    "1000 kyats",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black54)
-                                                ),
+                                                Text("Discount",
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors.black54)),
+                                                Text("1000 kyats",
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors.black54)),
                                               ],
                                             ),
                                             Row(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
                                               children: <Widget>[
-                                                Text(
-                                                    "Shipping Cost",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black54)
-                                                ),
-                                                Text(
-                                                    "99900 kyats",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black54)
-                                                ),
+                                                Text("Shipping Cost",
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors.black54)),
+                                                Text("99900 kyats",
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors.black54)),
                                               ],
                                             ),
                                             Divider(
@@ -152,15 +223,19 @@ class _MyOrderState extends State<MyOrder> {
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: <Widget>[
-                                      Text(
-                                        "Total Price",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black)
-                                      ),
-                                      Text(
-                                         "20000 Kyats ",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black)
-                                      ),
+                                      Text("Total Price",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black)),
+                                      Text("20000 Kyats ",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black)),
                                     ],
                                   ),
                                 )

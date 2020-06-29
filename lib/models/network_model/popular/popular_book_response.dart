@@ -1,7 +1,6 @@
 import '../../network_model/popular/popular_book.dart';
 
 class PopularBookResponse {
-
   List<PopularBook> results;
 
   PopularBookResponse({this.results});

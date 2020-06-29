@@ -4,7 +4,7 @@ class PopularBook {
   String desc;
   String price;
 
-  PopularBook({ this.bookname, this.image, this.desc, this.price});
+  PopularBook({this.bookname, this.image, this.desc, this.price});
 
   PopularBook.fromJson(Map<String, dynamic> json) {
     bookname = json['bookname'];

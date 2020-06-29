@@ -15,13 +15,13 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   void initState() {
-    AppRepository   appRepository = AppRepository();
+    AppRepository appRepository = AppRepository();
     super.initState();
     _mockCheckForSession().then((status) {
       if (status) {
-        if(appRepository.isOnBoarded()==false) {
+        if (appRepository.isOnBoarded() == false) {
           PageRouter.pushPageReplacement(context, OnBoardingPage());
-        }else{
+        } else {
           PageRouter.pushPageReplacement(context, MainPage());
         }
       } else {}
@@ -36,7 +36,6 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
         body: Center(
             child: Column(
@@ -52,26 +51,26 @@ class _SplashScreenState extends State<SplashScreen> {
                     image: new AssetImage('assets/images/splash.png'),
                     fit: BoxFit.fitWidth))),
         Padding(
-          padding: const EdgeInsets.all(8),
-          child: Center(
-            child: ShaderMask(
-              blendMode: BlendMode.srcIn,
-              shaderCallback: (Rect bounds) {
-                return LinearGradient(
-                  colors: [Colors.red, Colors.blue],
-                  tileMode: TileMode.mirror,
-                ).createShader(bounds);
-              },
-              child: new Text(MMTheme.mmText('splash'.tr().toString()), style: TextStyle(fontSize: 16)),
-            ),
-          )
-        ),
+            padding: const EdgeInsets.all(8),
+            child: Center(
+              child: ShaderMask(
+                blendMode: BlendMode.srcIn,
+                shaderCallback: (Rect bounds) {
+                  return LinearGradient(
+                    colors: [Colors.red, Colors.blue],
+                    tileMode: TileMode.mirror,
+                  ).createShader(bounds);
+                },
+                child: new Text(MMTheme.mmText('splash'.tr().toString()),
+                    style: TextStyle(fontSize: 16)),
+              ),
+            )),
         Padding(
-          padding: const EdgeInsets.only(top: 20),
-          child: SpinKitThreeBounce(
-            color: Colors.cyan,
-            size: 25.0,
-          )),
+            padding: const EdgeInsets.only(top: 20),
+            child: SpinKitThreeBounce(
+              color: Colors.cyan,
+              size: 25.0,
+            )),
       ],
     )));
   }

@@ -25,7 +25,8 @@ class _HomeSearchBoxState extends State<HomeSearchBox> {
         ),
         Padding(
           padding: const EdgeInsets.only(top: 15, left: 16),
-          child: Text(StringsConstants.latest_book, style: Styles.mediumTextStyle),
+          child:
+              Text(StringsConstants.latest_book, style: Styles.mediumTextStyle),
         ),
         Container(
           height: 35,

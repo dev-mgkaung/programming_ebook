@@ -1,12 +1,9 @@
-
 import 'package:flutter/material.dart';
-
 
 class RefreshScrollBehavior extends ScrollBehavior {
   @override
   Widget buildViewportChrome(
       BuildContext context, Widget child, AxisDirection axisDirection) {
-
     switch (getPlatform(context)) {
       case TargetPlatform.iOS:
         return child;

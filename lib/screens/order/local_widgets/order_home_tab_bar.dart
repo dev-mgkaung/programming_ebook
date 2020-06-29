@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +9,7 @@ class OrderTabBar extends StatelessWidget {
       color: Colors.deepOrangeAccent,
       height: 43,
       child: DefaultTabController(
-         length: 4,
+        length: 4,
         child: TabBar(
           labelPadding: EdgeInsets.all(0),
           indicatorPadding: EdgeInsets.all(0),
@@ -22,26 +21,38 @@ class OrderTabBar extends StatelessWidget {
           tabs: <Widget>[
             Tab(
               child: Container(
-                margin: EdgeInsets.only(left:15,right: 23),
-                child: Text("Delievered",style: TextStyle(color: Colors.white),),
+                margin: EdgeInsets.only(left: 15, right: 23),
+                child: Text(
+                  "Delievered",
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ),
             Tab(
               child: Container(
                 margin: EdgeInsets.only(right: 23),
-                child: Text("Pending",style: TextStyle(color: Colors.white),),
+                child: Text(
+                  "Pending",
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ),
             Tab(
               child: Container(
                 margin: EdgeInsets.only(right: 23),
-                child: Text("Processing",style: TextStyle(color: Colors.white),),
+                child: Text(
+                  "Processing",
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ),
             Tab(
                 child: Container(
               margin: EdgeInsets.only(right: 23),
-              child: Text("Cancelled",style: TextStyle(color: Colors.white),),
+              child: Text(
+                "Cancelled",
+                style: TextStyle(color: Colors.white),
+              ),
             )),
           ],
         ),

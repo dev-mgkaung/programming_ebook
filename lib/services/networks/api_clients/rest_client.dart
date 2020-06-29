@@ -14,7 +14,6 @@ class RestClient {
       final response =
           await http.get(Endpoints.baseUrl + url, headers: headers);
       responseJson = _returnResponse(response);
-
     } on SocketException {
       print('No net');
       throw FetchDataException('No Internet connection');

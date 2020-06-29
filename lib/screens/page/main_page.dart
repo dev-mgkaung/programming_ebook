@@ -35,7 +35,7 @@ class _MainPageState extends State<MainPage> {
             elevation: 0,
             backgroundColor: Colors.white,
             leading: IconButton(
-              icon: Icon(Icons.menu,color: Colors.blueAccent),
+              icon: Icon(Icons.menu, color: Colors.blueAccent),
               onPressed: () {
                 _globalKey.currentState.openDrawer();
               },
@@ -53,14 +53,14 @@ class _MainPageState extends State<MainPage> {
                 position: BadgePosition.topRight(top: 10, right: 10),
                 badgeContent: Text('3', style: Styles.notiTextStyle),
                 child: IconButton(
-                  icon:
-                      Icon(Icons.notifications_active, color: Colors.deepPurple),
+                  icon: Icon(Icons.notifications_active,
+                      color: Colors.deepPurple),
                   onPressed: () {},
                 ),
               ),
             ],
           ),
-          body:_getPage(currentPage),
+          body: _getPage(currentPage),
           drawer: AppDrawer(),
           bottomNavigationBar: FancyBottomNavigation(
             barBackgroundColor: Colors.white,

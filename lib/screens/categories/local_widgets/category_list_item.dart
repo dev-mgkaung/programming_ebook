@@ -5,11 +5,9 @@ import 'package:programmingebook/models/network_model/category/category_book.dar
 import 'package:programmingebook/widgets/spinKit_loading_widget.dart';
 
 class CategoryList extends StatelessWidget {
-
   final List<CategoryBook> categorylist;
 
   const CategoryList({Key key, this.categorylist}) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -19,21 +17,19 @@ class CategoryList extends StatelessWidget {
       shrinkWrap: true,
       padding: new EdgeInsets.symmetric(vertical: 2.0),
       itemBuilder: (context, index) =>
-          CategoryListItemRow(categorylist[index],context),
+          CategoryListItemRow(categorylist[index], context),
     );
-
   }
 
-  Widget CategoryListItemRow(CategoryBook categoryBook,BuildContext context)
-  {
-   return Card(
+  Widget CategoryListItemRow(CategoryBook categoryBook, BuildContext context) {
+    return Card(
       elevation: 4,
       child: Center(
         child: Container(
           height: 80,
           margin: const EdgeInsets.all(1),
           padding: const EdgeInsets.all(1),
-          width: MediaQuery.of(context).size.width ,
+          width: MediaQuery.of(context).size.width,
           color: Colors.white,
           child: Row(
             children: <Widget>[

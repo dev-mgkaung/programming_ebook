@@ -11,19 +11,19 @@ class AppDrawer extends StatelessWidget {
         decoration: BoxDecoration(
             image: DecorationImage(
                 fit: BoxFit.cover,
-                image:  AssetImage(AssetsPath.imagepath+'background.jpg'))),
+                image: AssetImage(AssetsPath.imagepath + 'background.jpg'))),
         child: Stack(children: <Widget>[
           Positioned(
             bottom: 17.0,
             left: 18.0,
             child: Container(
-              width: 100,height: 100,
+              width: 100,
+              height: 100,
               padding: const EdgeInsets.all(5),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(70),
                 image: DecorationImage(
-                  image: AssetImage(AssetsPath.imagepath+"mgkaung.jpg")
-                ),
+                    image: AssetImage(AssetsPath.imagepath + "mgkaung.jpg")),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey.withOpacity(0.5),
@@ -48,20 +48,21 @@ class AppDrawer extends StatelessWidget {
   }
 
   Widget _createDrawerItem(
-    {IconData icon, String text, GestureTapCallback onTap}) {
-  return ListTile(
-    title: Row(
-      children: <Widget>[
-        Icon(icon),
-        Padding(
-          padding: EdgeInsets.only(left: 8.0),
-          child: Text(text),
-        )
-      ],
-    ),
-    onTap: onTap,
-  );
-}
+      {IconData icon, String text, GestureTapCallback onTap}) {
+    return ListTile(
+      title: Row(
+        children: <Widget>[
+          Icon(icon),
+          Padding(
+            padding: EdgeInsets.only(left: 8.0),
+            child: Text(text),
+          )
+        ],
+      ),
+      onTap: onTap,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -69,19 +70,30 @@ class AppDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           _createHeader(),
-          _createDrawerItem(icon: Icons.home,text: 'Home',),
-          _createDrawerItem(icon: Icons.new_releases, text: 'New Books',),
-          _createDrawerItem(icon: Icons.card_giftcard, text: 'Discount Books',),
+          _createDrawerItem(
+            icon: Icons.home,
+            text: 'Home',
+          ),
+          _createDrawerItem(
+            icon: Icons.new_releases,
+            text: 'New Books',
+          ),
+          _createDrawerItem(
+            icon: Icons.card_giftcard,
+            text: 'Discount Books',
+          ),
           Divider(),
           _createDrawerItem(icon: Icons.book, text: 'Free Book'),
           _createDrawerItem(icon: Icons.file_download, text: 'Download'),
           _createDrawerItem(icon: Icons.picture_as_pdf, text: 'Pdf Viewer'),
           Divider(),
           _createDrawerItem(icon: Icons.bug_report, text: 'Report an issue'),
-          _createDrawerItem(icon: Icons.sentiment_very_satisfied,text: 'About',onTap: (){
-            AboutPage.dialogShow(context);
-          }),
-
+          _createDrawerItem(
+              icon: Icons.sentiment_very_satisfied,
+              text: 'About',
+              onTap: () {
+                AboutPage.dialogShow(context);
+              }),
         ],
       ),
     );

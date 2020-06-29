@@ -15,11 +15,10 @@ class PopularList extends StatelessWidget {
         itemCount: popularlist.length,
         shrinkWrap: true,
         itemBuilder: (context, index) =>
-            PopularListItemRow(popularlist[index],context)
-    );
+            PopularListItemRow(popularlist[index], context));
   }
-  Widget PopularListItemRow(PopularBook popularBook,BuildContext context)
-  {
+
+  Widget PopularListItemRow(PopularBook popularBook, BuildContext context) {
     return Card(
       elevation: 2,
       child: Center(
@@ -84,5 +83,4 @@ class PopularList extends StatelessWidget {
       ),
     );
   }
-
 }

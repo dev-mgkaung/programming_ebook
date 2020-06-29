@@ -1,4 +1,3 @@
-
 import 'dart:convert';
 
 import 'package:programmingebook/services/base/base_repository.dart';
@@ -13,7 +12,6 @@ import 'package:programmingebook/models/network_model/category/category_book.dar
 import 'package:programmingebook/models/network_model/category/category_response.dart';
 
 class AppRepository extends BaseRepository {
-
   final String _apiKey = "Your Api Key Here";
 
   RestClient _helper = RestClient();
@@ -30,13 +28,11 @@ class AppRepository extends BaseRepository {
     return PopularBookResponse.fromJson(response).results;
   }
 
-
   @override
   Future<List<CategoryBook>> fetchCategoryBookList() async {
     final response = await _helper.get("${Endpoints.bookCategory}");
     return CategoryResponse.fromJson(response).results;
   }
-
 
   @override
   Future<bool> isOnBoarded() {
@@ -45,6 +41,6 @@ class AppRepository extends BaseRepository {
 
   @override
   void setOnBoarded(bool value) {
-     preferenceConnector.setBool(PreferenceConstants.is_onboarding,value);
+    preferenceConnector.setBool(PreferenceConstants.is_onboarding, value);
   }
 }

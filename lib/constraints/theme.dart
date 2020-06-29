@@ -2,28 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 ThemeData light = ThemeData(
-        brightness: Brightness.light,
-      //  primarySwatch: Colors.deepOrange,
-       // accentColor: Colors.pink,
-     //   scaffoldBackgroundColor: Colors.white,
-    //    backgroundColor: Colors.white,
-       // cardColor: AppColors.cardWhite,
-       // dividerColor: AppColors.dividerColor,
+  brightness: Brightness.light,
+  //  primarySwatch: Colors.deepOrange,
+  // accentColor: Colors.pink,
+  //   scaffoldBackgroundColor: Colors.white,
+  //    backgroundColor: Colors.white,
+  // cardColor: AppColors.cardWhite,
+  // dividerColor: AppColors.dividerColor,
 //        appBarTheme: AppBarTheme(
 //        color: AppColors.white,
 //        brightness: Brightness.light,
 //        iconTheme: IconThemeData(color: AppColors.black)),
 //        snackBarTheme: SnackBarThemeData(backgroundColor: AppColors.primaryColor)
-       );
+);
 
 ThemeData dark = ThemeData(
-        brightness: Brightness.dark,
-       // primarySwatch: Colors.green,
-    //    accentColor: Colors.pink,
-      //  scaffoldBackgroundColor: Colors.black,
-        //backgroundColor: Colors.black,
-      //  cardColor: AppColors.cardWhite,
-     //   dividerColor: AppColors.dividerColor,
+  brightness: Brightness.dark,
+  // primarySwatch: Colors.green,
+  //    accentColor: Colors.pink,
+  //  scaffoldBackgroundColor: Colors.black,
+  //backgroundColor: Colors.black,
+  //  cardColor: AppColors.cardWhite,
+  //   dividerColor: AppColors.dividerColor,
 //        appBarTheme: AppBarTheme(
 //        color: AppColors.black,
 //        brightness: Brightness.dark,

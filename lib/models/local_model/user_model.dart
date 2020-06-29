@@ -3,9 +3,11 @@
 //     final userDataModel = userDataModelFromJson(jsonString);
 import 'dart:convert';
 
-UserDataModel userDataModelFromJson(String str) => UserDataModel.fromJson(json.decode(str));
+UserDataModel userDataModelFromJson(String str) =>
+    UserDataModel.fromJson(json.decode(str));
 
 String userDataModelToJson(UserDataModel data) => json.encode(data.toJson());
+
 class UserDataModel {
   String fullName;
   String username;

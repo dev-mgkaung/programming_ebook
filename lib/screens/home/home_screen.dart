@@ -19,17 +19,19 @@ class _HomeScreenState extends State<HomeScreen> {
       physics: ClampingScrollPhysics(),
       children: [
         Column(
-          crossAxisAlignment: CrossAxisAlignment.start, children: [
-          HomeSearchBox(),
-          HomeTabBar(),
-          Padding(
-            padding: EdgeInsets.only(left: 16, top: 10),
-            child: Text(StringsConstants.popular_label, style: Styles.mediumTextStyle),
-          ),
-          HomePopularList(),
-        ],)
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            HomeSearchBox(),
+            HomeTabBar(),
+            Padding(
+              padding: EdgeInsets.only(left: 16, top: 10),
+              child: Text(StringsConstants.popular_label,
+                  style: Styles.mediumTextStyle),
+            ),
+            HomePopularList(),
+          ],
+        )
       ],
     );
   }
 }
-

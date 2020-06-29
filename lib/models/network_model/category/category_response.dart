@@ -1,12 +1,9 @@
-
 import '../../network_model/category/category_book.dart';
 
-class CategoryResponse
-{
+class CategoryResponse {
+  List<CategoryBook> results;
 
-   List<CategoryBook> results;
-
-   CategoryResponse({this.results});
+  CategoryResponse({this.results});
 
   CategoryResponse.fromJson(Map<String, dynamic> json) {
     if (json['results'] != null) {
@@ -24,5 +21,4 @@ class CategoryResponse
     }
     return data;
   }
-
 }

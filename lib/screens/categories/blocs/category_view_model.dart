@@ -26,7 +26,7 @@ class CategoryViewModel extends BaseApiBloc<List<CategoryBook>>
       _categoryBookList = await appRepository.fetchCategoryBookList();
       addDataToStream(_categoryBookList);
     } catch (e) {
-      print("error print"+e.toString());
+      print("error print" + e.toString());
       addErrorToStream(e);
     }
   }

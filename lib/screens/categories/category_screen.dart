@@ -19,7 +19,12 @@ class CategoryScreen extends StatefulWidget {
 }
 
 class _State extends State<CategoryScreen> with BaseScreenMixin {
-
+  final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey = new GlobalKey<RefreshIndicatorState>();
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _refreshIndicatorKey.currentState.show());
+  }
   @override
   Widget build(BuildContext context) {
     return BaseView<CategoryViewModel>(
@@ -36,6 +41,7 @@ class _State extends State<CategoryScreen> with BaseScreenMixin {
     }, builder: (BuildContext context, CategoryViewModel categoryViewModel,
             Widget child) {
       return RefreshIndicator(
+          key: _refreshIndicatorKey,
           onRefresh: () => categoryViewModel.fetchCategoryList(),
           child: Expanded(
             child: ListView(physics: ClampingScrollPhysics(), children: [
@@ -81,15 +87,18 @@ class _State extends State<CategoryScreen> with BaseScreenMixin {
                   ApiStreamBuilder<List<CategoryBook>>(
                     stream: categoryViewModel.apiDataSinkStream,
                     loadingWidget: (value) {
-                      return buildLoadingWidget();},
+                      return buildLoadingWidget();
+                    },
                     errorWidget: (value) {
                       return buildErrorWidget(
                         errorMessage: value.toString(),
-                        onRetryPressed: () => categoryViewModel.fetchCategoryList(),
+                        onRetryPressed: () =>
+                            categoryViewModel.fetchCategoryList(),
                       );
                     },
                     dataWidget: (value) {
-                      return CategoryList(categorylist: value);},
+                      return CategoryList(categorylist: value);
+                    },
                   ),
                   SizedBox(
                     height: 30,
