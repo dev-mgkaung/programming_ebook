@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:programmingebook/models/network_model/book/book_model.dart';
 import 'package:programmingebook/screens/bookdetail/local_widgets/top_container.dart';
 import 'package:programmingebook/screens/bookdetail/local_widgets/generic_container.dart';
 import 'package:programmingebook/screens/bookdetail/local_widgets/author_container.dart';
 import 'package:programmingebook/screens/bookdetail/local_widgets/tab_container.dart';
+import 'package:programmingebook/screens/bookdetail/blocs/add_to_cart_bloc.dart';
 
 class DetailsPageBody extends StatefulWidget {
-
   final Book bookObject;
+
   DetailsPageBody(this.bookObject);
 
   @override
@@ -17,6 +19,12 @@ class DetailsPageBody extends StatefulWidget {
 class _DetailsPageBodyState extends State<DetailsPageBody> {
   @override
   Widget build(BuildContext context) {
+    return BlocBuilder<AddToCartBloc, String>(builder: (_, count) {
+      return _detailPageWidget();
+    });
+  }
+
+  Widget _detailPageWidget() {
     return Container(
       child: ListView(
         children: <Widget>[
