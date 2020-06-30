@@ -44,16 +44,8 @@ Project Structure
  1. Themes change (Dark Mode, Light Mode)          <=>   ( Using Provider )
  2. Multiple Languge Support (Myanmar,English)     <=>   ( Using Localization with json file)
  3. Data Source from Post man mock api             <=>   ( Using Bloc, rxdrt, dio )
- ----
-  
-  ## 📸 ScreenShots
 
-|             Light Theme              |              Dark Theme              |
-| :----------------------------------: | :----------------------------------: |
-| ![](https://github.com/dev-mgkaung/Knowledge-NoteList/blob/gh-page/maxresdefault.jpg) | ![](https://github.com/dev-mgkaung/Knowledge-NoteList/blob/gh-page/one.jpg) |
-| ![](https://i.imgur.com/rujH2xz.png) | ![](https://i.imgur.com/gOx5T8H.png) |
-| ![](https://i.imgur.com/RubqN3Z.png) | ![](https://i.imgur.com/D2Ucb2t.png) |
-Screenshoot
+
 --------
   <img alt="English Unicdoe Choose" src="https://github.com/dev-mgkaung/Knowledge-NoteList/blob/gh-page/maxresdefault.jpg" width=1000 height=650 />
   
