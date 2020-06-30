@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:programmingebook/screens/settings/profile_list_item.dart';
 import '../../routes.dart';
 import '../../screens/order/order_list.dart';
 import '../../constraints/theme.dart';
@@ -15,20 +17,20 @@ class SettingScreen extends StatefulWidget {
 class _SettingScreenState extends State<SettingScreen> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        margin: const EdgeInsets.all(15),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(10),
-          child: Column(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(1),
-                child: Container(
-                  width: 100,
-                  height: 100,
-                  child: Center(
-                      child: CircleAvatar(
+    return new ListView(
+      shrinkWrap: true,
+      physics: ClampingScrollPhysics(),
+      scrollDirection: Axis.vertical,
+        children: <Widget>[
+          Column(
+          children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: Container(
+              width: 100,
+              height: 100,
+              child: Center(
+                  child: CircleAvatar(
                     radius: 55,
                     backgroundColor: Color(0xffFDCF09),
                     child: CircleAvatar(
@@ -36,100 +38,66 @@ class _SettingScreenState extends State<SettingScreen> {
                       backgroundImage: AssetImage('assets/images/mgkaung.jpg'),
                     ),
                   )),
-                ),
+            ),
+          ),
+          new ListView(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            scrollDirection: Axis.vertical,
+            children: <Widget>[
+              ProfileListItem(
+                icon: FontAwesomeIcons.userEdit,
+                text: 'Edit My Profile',
               ),
-              Card(
-                elevation: 10,
-                margin: const EdgeInsets.all(5),
-                clipBehavior: Clip.antiAlias,
-                child: Column(
-                  children: <Widget>[
-                    ListTile(
-                      onTap: () {},
-                      leading: const Icon(Icons.edit),
-                      title: Text("Edit My Profile"),
-                      // subtitle: Text('subtitle'.tr().toString()),
-                      trailing: const Icon(Icons.arrow_drop_down_circle),
-                    ),
-                    Divider(),
-                    ListTile(
-                      onTap: () {},
-                      leading: const Icon(Icons.local_shipping),
-                      title: Text("Shipping Address"),
-                      // subtitle: Text('subtitle'.tr().toString()),
-                      trailing: const Icon(Icons.arrow_drop_down_circle),
-                    ),
-                    Divider(),
-                    ListTile(
-                      onTap: () {},
-                      leading: const Icon(Icons.payment),
-                      title: Text("Payment Method"),
-                      // subtitle: Text('subtitle'.tr().toString()),
-                      trailing: const Icon(Icons.arrow_drop_down_circle),
-                    ),
-                    Divider(),
-                    ListTile(
-                      onTap: () {
-                        UtilsMessage.handleClickMe(context);
-                      },
-                      leading: const Icon(Icons.translate),
-                      title: Text('language'.tr().toString()),
-                      subtitle: Text('subtitle'.tr().toString()),
-                      trailing: const Icon(Icons.arrow_drop_down_circle),
-                    ),
-                    Divider(),
-                    ListTile(
-                      onTap: () {
-                        PageRouter.gotoNextPage(context, MyOrder());
-                      },
-                      leading: const Icon(Icons.shopping_cart),
-                      title: Text('My Order'.tr().toString()),
-                      // subtitle: Text('subtitle'.tr().toString()),
-                      trailing: const Icon(Icons.arrow_drop_down_circle),
-                    ),
-                    Divider(),
-                    ListTile(
-                      onTap: () {},
-                      leading: const Icon(Icons.favorite_border),
-                      title: Text("My Favourite"),
-                      // subtitle: Text('subtitle'.tr().toString()),
-                      trailing: const Icon(Icons.arrow_drop_down_circle),
-                    ),
-                    Divider(),
-                    ListTile(
-                      onTap: () {},
-                      leading: const Icon(Icons.chat),
-                      title: Text("Customer Service"),
-                      // subtitle: Text('subtitle'.tr().toString()),
-                      trailing: const Icon(Icons.arrow_drop_down_circle),
-                    ),
-                    Divider(),
-                    CheckboxListTile(
-                      value: true,
-                      onChanged: (bool value) {
-                        setState(() {});
-                      },
-                      title: Text("Notification"),
-                      // subtitle: Text('subtitle'.tr().toString()),
-                    ),
-                    Divider(),
-                    Consumer<ThemeNotifier>(
-                      builder: (context, notifier, child) => SwitchListTile(
-                        title: Text("Dark Mode"),
-                        onChanged: (val) {
-                          notifier.toggleTheme();
-                        },
-                        value: notifier.darkTheme,
-                      ),
-                    ),
-                    SizedBox(),
-                  ],
+              ProfileListItem(
+                icon: FontAwesomeIcons.addressCard,
+                text: 'Shipping Address',
+              ),
+              ProfileListItem(
+                icon: FontAwesomeIcons.paypal,
+                text: 'Payment Method',
+              ),
+              GestureDetector(
+                child: ProfileListItem(
+                  icon: FontAwesomeIcons.language,
+                  text: 'Change Language',
                 ),
-              )
+                onTap: (){ UtilsMessage.handleClickMe(context);},
+              ),
+              ProfileListItem(
+                icon: FontAwesomeIcons.firstOrder,
+                text: 'My Order',
+              ),
+              ProfileListItem(
+                icon: FontAwesomeIcons.save,
+                text: 'Favourite',
+                hasNavigation: false,
+              ),
             ],
           ),
-        ),
-      ),
+          SizedBox(height: 10,),
+          CheckboxListTile(
+            value: true,
+            onChanged: (bool value) {
+              setState(() {});
+            },
+            title: Text("Notification"),
+            // subtitle: Text('subtitle'.tr().toString()),
+          ),
+          Divider(),
+          Consumer<ThemeNotifier>(
+            builder: (context, notifier, child) => SwitchListTile(
+              title: Text("Dark Mode"),
+              onChanged: (val) {
+                notifier.toggleTheme();
+              },
+              value: notifier.darkTheme,
+            ),
+          ),
+          SizedBox(height: 50,)
+        ],
+        )
+        ],
     );
   }
 }

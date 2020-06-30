@@ -6,7 +6,7 @@ ThemeData light = ThemeData(
   //  primarySwatch: Colors.deepOrange,
   // accentColor: Colors.pink,
   //   scaffoldBackgroundColor: Colors.white,
-  //    backgroundColor: Colors.white,
+  //   backgroundColor: Colors.white70,
   // cardColor: AppColors.cardWhite,
   // dividerColor: AppColors.dividerColor,
 //        appBarTheme: AppBarTheme(
@@ -21,7 +21,7 @@ ThemeData dark = ThemeData(
   // primarySwatch: Colors.green,
   //    accentColor: Colors.pink,
   //  scaffoldBackgroundColor: Colors.black,
-  //backgroundColor: Colors.black,
+  //backgroundColor: Colors.black12,
   //  cardColor: AppColors.cardWhite,
   //   dividerColor: AppColors.dividerColor,
 //        appBarTheme: AppBarTheme(

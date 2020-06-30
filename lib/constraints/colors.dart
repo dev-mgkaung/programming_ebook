@@ -24,4 +24,10 @@ class AppColors {
   static const kCircularProgressColor = const Color(0xFF4DD0E1);
 
   static const kBackgroundWhite = Colors.white;
+
+  static const kDarkPrimaryColor = Color(0xFF212121);
+  static const kDarkSecondaryColor = Color(0xFF373737);
+  static const kLightPrimaryColor = Color(0xFFFFFFFF);
+  static const kLightSecondaryColor = Color(0xFFF3F7FB);
+  static const kAccentColor = Color(0xFFFFC107);
 }
