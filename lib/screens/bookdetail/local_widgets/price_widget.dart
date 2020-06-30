@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:programmingebook/screens/bookdetail/local_widgets/bottom_bar.dart';
 
-
 class PriceWidget extends StatelessWidget {
   const PriceWidget({@required this.widget});
   final BottomBar widget;

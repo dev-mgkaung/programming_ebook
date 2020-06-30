@@ -23,12 +23,11 @@ class _BottomBarState extends State<BottomBar> {
             color: Colors.white,
             border: Border(
                 top: BorderSide(
-                  color: Colors.black12,
-                  width: 1,
-                ))),
+              color: Colors.black12,
+              width: 1,
+            ))),
         child: Row(
-          children: <Widget>[PriceWidget(widget: widget), AddButton()
-          ],
+          children: <Widget>[PriceWidget(widget: widget), AddButton()],
         ),
       ),
     );

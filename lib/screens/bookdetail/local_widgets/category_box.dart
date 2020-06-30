@@ -32,14 +32,11 @@ class CategoryBox extends StatelessWidget {
             children: <Widget>[
               Text(
                 category,
-                style: TextStyle(
-                    letterSpacing: 1.5, fontSize: 12),
+                style: TextStyle(letterSpacing: 1.5, fontSize: 12),
               ),
               Text(
                 categoryValue,
-                style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600),
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
               )
             ],
           )

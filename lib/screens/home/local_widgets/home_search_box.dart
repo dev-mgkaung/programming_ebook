@@ -25,8 +25,8 @@ class _HomeSearchBoxState extends State<HomeSearchBox> {
         ),
         Padding(
           padding: const EdgeInsets.only(top: 15, left: 16),
-          child:
-              Text('latest_book'.tr().toString(), style: Styles.mediumTextStyle),
+          child: Text('latest_book'.tr().toString(),
+              style: Styles.mediumTextStyle),
         ),
         Container(
           height: 35,
@@ -49,7 +49,8 @@ class _HomeSearchBoxState extends State<HomeSearchBox> {
                 maxLengthEnforced: true,
                 style: Styles.mediumTextStyle,
                 decoration: InputDecoration(
-                  contentPadding: EdgeInsets.only(left: 16,right: 16,bottom: 10),
+                  contentPadding:
+                      EdgeInsets.only(left: 16, right: 16, bottom: 10),
                   border: InputBorder.none,
                   hintText: 'search'.tr().toString(),
                   hintStyle: TextStyle(

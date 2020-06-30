@@ -18,12 +18,13 @@ class DummyList extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return Card(
-              margin: EdgeInsets.only(right: 10, bottom: 5,left: 5),
+              margin: EdgeInsets.only(right: 10, bottom: 5, left: 5),
               elevation: 3,
               child: InkWell(
                   splashColor: Colors.blue.withAlpha(30),
                   onTap: () {
-                    PageRouter.gotoNextPage(context, BookDetailPage(booklist.books[0]));
+                    PageRouter.gotoNextPage(
+                        context, BookDetailPage(booklist.books[0]));
                   },
                   child: Container(
                     width: 140,
@@ -32,8 +33,7 @@ class DummyList extends StatelessWidget {
                       child: CachedNetworkImage(
                         imageUrl: dummylist[index],
                         placeholder: (context, url) =>
-                            SpinKitLoadingWidget(
-                                isImage: false, index: 0),
+                            SpinKitLoadingWidget(isImage: false, index: 0),
                         errorWidget: (context, url, error) => Image.asset(
                           "assets/images/onboard3.png",
                           fit: BoxFit.cover,

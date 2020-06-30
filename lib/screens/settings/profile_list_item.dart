@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-
 class ProfileListItem extends StatelessWidget {
   final IconData icon;
   final String text;
@@ -16,8 +15,8 @@ class ProfileListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height:50,
-      margin: const EdgeInsets.only(left: 10,right: 10,top: 5),
+      height: 50,
+      margin: const EdgeInsets.only(left: 10, right: 10, top: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
         color: Theme.of(context).backgroundColor,
@@ -38,11 +37,16 @@ class ProfileListItem extends StatelessWidget {
             size: 20,
           ),
           SizedBox(width: 15),
-          Text(this.text,),
+          Text(
+            this.text,
+          ),
           Spacer(),
-        //  if (this.hasNavigation)
-            FaIcon(FontAwesomeIcons.longArrowAltRight,size: 20,),
-            SizedBox(width: 15),
+          //  if (this.hasNavigation)
+          FaIcon(
+            FontAwesomeIcons.longArrowAltRight,
+            size: 20,
+          ),
+          SizedBox(width: 15),
         ],
       ),
     );

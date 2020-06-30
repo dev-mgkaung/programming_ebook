@@ -19,12 +19,15 @@ class CategoryScreen extends StatefulWidget {
 }
 
 class _State extends State<CategoryScreen> with BaseScreenMixin {
-  final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey = new GlobalKey<RefreshIndicatorState>();
+  final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey =
+      new GlobalKey<RefreshIndicatorState>();
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) => _refreshIndicatorKey.currentState.show());
+    WidgetsBinding.instance
+        .addPostFrameCallback((_) => _refreshIndicatorKey.currentState.show());
   }
+
   @override
   Widget build(BuildContext context) {
     return BaseView<CategoryViewModel>(

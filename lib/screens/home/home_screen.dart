@@ -55,8 +55,10 @@ class _HomeScreenState extends State<HomeScreen> with BaseScreenMixin {
                 children: [
                   HomeSearchBox(),
                   HomeTabBar(),
-                  Padding(padding: EdgeInsets.only(left: 16, top: 10),
-                    child: Text('popular'.tr().toString(), style: Styles.mediumTextStyle),
+                  Padding(
+                    padding: EdgeInsets.only(left: 16, top: 10),
+                    child: Text('popular'.tr().toString(),
+                        style: Styles.mediumTextStyle),
                   ),
                   ApiStreamBuilder<List<PopularBook>>(
                     stream: popularViewModel.apiDataSinkStream,

@@ -75,11 +75,16 @@ class AppDrawer extends StatelessWidget {
             text: 'discount_menu'.tr().toString(),
           ),
           Divider(),
-          _createDrawerItem(icon: Icons.book, text: 'free_book_menu'.tr().toString()),
-          _createDrawerItem(icon: Icons.file_download, text: 'favourite_menu'.tr().toString()),
-          _createDrawerItem(icon: Icons.picture_as_pdf, text: 'pdf_menu'.tr().toString()),
+          _createDrawerItem(
+              icon: Icons.book, text: 'free_book_menu'.tr().toString()),
+          _createDrawerItem(
+              icon: Icons.file_download,
+              text: 'favourite_menu'.tr().toString()),
+          _createDrawerItem(
+              icon: Icons.picture_as_pdf, text: 'pdf_menu'.tr().toString()),
           Divider(),
-          _createDrawerItem(icon: Icons.bug_report, text: 'report_menu'.tr().toString()),
+          _createDrawerItem(
+              icon: Icons.bug_report, text: 'report_menu'.tr().toString()),
           _createDrawerItem(
               icon: Icons.sentiment_very_satisfied,
               text: 'about_menu'.tr().toString(),

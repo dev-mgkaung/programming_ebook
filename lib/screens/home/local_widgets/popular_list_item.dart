@@ -16,7 +16,8 @@ class PopularList extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         itemCount: popularlist.length,
         shrinkWrap: true,
-        itemBuilder: (context, index) => PopularListItemRow(popularlist[index], context));
+        itemBuilder: (context, index) =>
+            PopularListItemRow(popularlist[index], context));
   }
 
   Widget PopularListItemRow(PopularBook popularBook, BuildContext context) {
@@ -30,7 +31,7 @@ class PopularList extends StatelessWidget {
           child: Row(
             children: <Widget>[
               Container(
-                child:ClipRRect(
+                child: ClipRRect(
                   borderRadius: BorderRadius.circular(10.0),
                   child: CachedNetworkImage(
                     imageUrl: popularBook.image,

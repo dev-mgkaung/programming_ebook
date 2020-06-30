@@ -3,7 +3,6 @@ import 'package:programmingebook/screens/bookdetail/local_widgets/book_detail_pa
 import 'package:programmingebook/widgets/youtube_player_view.dart';
 
 class TabBarContainer extends StatelessWidget {
-
   final DetailsPageBody widget;
 
   const TabBarContainer({
@@ -54,7 +53,7 @@ class TabBarContainer extends StatelessWidget {
                     children: <Widget>[
                       Padding(
                         padding:
-                        EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                            EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                         child: Text("Plot Summary",
                             style: TextStyle(
                                 fontSize: 28,
@@ -63,7 +62,7 @@ class TabBarContainer extends StatelessWidget {
                       ),
                       Padding(
                         padding:
-                        EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+                            EdgeInsets.symmetric(horizontal: 10, vertical: 0),
                         child: Text(
                           widget.bookObject.summary,
                           softWrap: true,
@@ -80,7 +79,6 @@ class TabBarContainer extends StatelessWidget {
                 padding: EdgeInsets.all(2),
                 child: YoutubePlayerView(),
               ),
-
               Center(
                 child: Text("NO REVIEWS",
                     style: TextStyle(

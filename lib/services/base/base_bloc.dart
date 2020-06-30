@@ -22,7 +22,7 @@ class BaseApiBloc<T> {
   }
 
   void addErrorToStream(Exception e) {
-     print(e.toString());
+    print(e.toString());
     apiDataSink.add(ApiResponse.error(e));
   }
 }

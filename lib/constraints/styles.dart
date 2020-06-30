@@ -12,5 +12,4 @@ class Styles {
 
   static TextStyle appBarTextStyleTheme(bool isDark) =>
       TextStyle(color: isDark ? Colors.white : Colors.black);
-
 }

@@ -4,6 +4,7 @@ import 'package:programmingebook/constraints/styles.dart';
 import 'package:programmingebook/models/network_model/category/category_book.dart';
 import 'package:programmingebook/widgets/spinKit_loading_widget.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+
 class CategoryList extends StatelessWidget {
   final List<CategoryBook> categorylist;
 
@@ -13,23 +14,22 @@ class CategoryList extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimationLimiter(
         child: new ListView.builder(
-      physics: const NeverScrollableScrollPhysics(),
-      itemCount: categorylist.length,
-      shrinkWrap: true,
-      padding: new EdgeInsets.symmetric(vertical: 2.0),
-      itemBuilder: (context, index) {
-       return AnimationConfiguration.staggeredList(
-          position: index,
-          duration: const Duration(milliseconds: 375),
-          child: SlideAnimation(
-            verticalOffset: 50.0,
-            child: FlipAnimation(
-              child:  CategoryListItemRow(categorylist[index], context),
-            ),
-          ),
-        );
-      })
-    );
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: categorylist.length,
+            shrinkWrap: true,
+            padding: new EdgeInsets.symmetric(vertical: 2.0),
+            itemBuilder: (context, index) {
+              return AnimationConfiguration.staggeredList(
+                position: index,
+                duration: const Duration(milliseconds: 375),
+                child: SlideAnimation(
+                  verticalOffset: 50.0,
+                  child: FlipAnimation(
+                    child: CategoryListItemRow(categorylist[index], context),
+                  ),
+                ),
+              );
+            }));
   }
 
   Widget CategoryListItemRow(CategoryBook categoryBook, BuildContext context) {
