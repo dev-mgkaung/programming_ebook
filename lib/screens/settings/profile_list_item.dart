@@ -17,7 +17,6 @@ class ProfileListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height:50,
-
       margin: const EdgeInsets.only(left: 10,right: 10,top: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
@@ -41,9 +40,9 @@ class ProfileListItem extends StatelessWidget {
           SizedBox(width: 15),
           Text(this.text,),
           Spacer(),
-          if (this.hasNavigation)
-            FaIcon(FontAwesomeIcons.arrowRight,size: 20,),
-          SizedBox(width: 15),
+        //  if (this.hasNavigation)
+            FaIcon(FontAwesomeIcons.longArrowAltRight,size: 20,),
+            SizedBox(width: 15),
         ],
       ),
     );

@@ -29,17 +29,31 @@ class _SettingScreenState extends State<SettingScreen> {
             child: Container(
               width: 100,
               height: 100,
-              child: Center(
-                  child: CircleAvatar(
-                    radius: 55,
-                    backgroundColor: Color(0xffFDCF09),
-                    child: CircleAvatar(
-                      radius: 50,
-                      backgroundImage: AssetImage('assets/images/mgkaung.jpg'),
-                    ),
-                  )),
+              child:  Stack(
+                children: <Widget>[
+              CircleAvatar(
+              radius: 100,
+                backgroundImage: AssetImage('assets/images/mgkaung.jpg'),
+              ),
+              Align(
+                alignment: Alignment.bottomRight,
+                child: Container(
+                  height:   25,
+                  width:    25,
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).accentColor,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Center(
+                    heightFactor:  15,
+                    widthFactor:  15,
+                    child: Icon(
+                      FontAwesomeIcons.pen,
+                      color: Colors.black87,
+                      size:  15),
+                  ),
             ),
-          ),
+          )]))),
           new ListView(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
