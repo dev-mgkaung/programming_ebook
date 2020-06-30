@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:programmingebook/screens/bookdetail/local_widgets/book_detail_page_body.dart';
+import 'package:programmingebook/widgets/youtube_player_view.dart';
 
 class TabBarContainer extends StatelessWidget {
 
@@ -15,7 +16,7 @@ class TabBarContainer extends StatelessWidget {
       height: 500,
       width: double.infinity,
       child: DefaultTabController(
-        length: 2,
+        length: 3,
         child: Scaffold(
           appBar: PreferredSize(
             preferredSize: Size.fromHeight(50),
@@ -34,6 +35,7 @@ class TabBarContainer extends StatelessWidget {
                       unselectedLabelColor: Colors.cyanAccent,
                       tabs: <Widget>[
                         Text("Info"),
+                        Text("Video"),
                         Text("Reviews"),
                       ],
                     )
@@ -48,6 +50,7 @@ class TabBarContainer extends StatelessWidget {
                 padding: EdgeInsets.all(20),
                 child: Container(
                   child: ListView(
+                    physics: NeverScrollableScrollPhysics(),
                     children: <Widget>[
                       Padding(
                         padding:
@@ -73,6 +76,11 @@ class TabBarContainer extends StatelessWidget {
                   ),
                 ),
               ),
+              Padding(
+                padding: EdgeInsets.all(2),
+                child: YoutubePlayerView(),
+              ),
+
               Center(
                 child: Text("NO REVIEWS",
                     style: TextStyle(

@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:programmingebook/app.dart';
 import 'package:programmingebook/app_config.dart';
@@ -9,6 +10,11 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   setupAppConfig();
   BlocSupervisor.delegate = BaseBlocDelegate();
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.blueAccent,
+    ),
+  );
   runApp(EasyLocalization(
       supportedLocales: [Locale('en', 'US'), Locale('my')],
       path: 'resources/langs',

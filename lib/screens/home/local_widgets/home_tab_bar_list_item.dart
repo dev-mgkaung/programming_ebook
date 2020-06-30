@@ -12,7 +12,7 @@ class DummyList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        padding: EdgeInsets.only(left: 2, right: 6),
+        padding: EdgeInsets.only(right: 6),
         itemCount: dummylist.length,
         physics: BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
@@ -26,7 +26,7 @@ class DummyList extends StatelessWidget {
                     PageRouter.gotoNextPage(context, BookDetailPage(booklist.books[0]));
                   },
                   child: Container(
-                    width: 138,
+                    width: 140,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: CachedNetworkImage(
