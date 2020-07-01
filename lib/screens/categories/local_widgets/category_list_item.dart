@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:programmingebook/constraints/styles.dart';
@@ -37,7 +38,7 @@ class CategoryList extends StatelessWidget {
       elevation: 4,
       child: Center(
         child: Container(
-          height: 80,
+          height: 85,
           margin: const EdgeInsets.all(1),
           padding: const EdgeInsets.all(1),
           width: MediaQuery.of(context).size.width,
@@ -72,19 +73,14 @@ class CategoryList extends StatelessWidget {
                         categoryBook.name,
                         style: Styles.mediumTextStyle,
                       ),
-                      SizedBox(height: 5),
+                      SizedBox(height:2),
                       Flexible(
-                        child: Text(
+                        child: AutoSizeText(
                           categoryBook.description,
                           overflow: TextOverflow.ellipsis,
+                          style: TextStyle(fontSize: 12.0),
                           maxLines: 2,
-                          softWrap: true,
-                          style: TextStyle(
-                              fontSize: 13,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.black54),
-                        ),
-                      ),
+                        )),
                       SizedBox(height: 5),
                       Text(
                         categoryBook.total,

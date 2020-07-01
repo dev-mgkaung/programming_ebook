@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:programmingebook/constraints/styles.dart';
@@ -55,20 +56,16 @@ class PopularList extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
-                        popularBook.bookname,
-                        style: Styles.mediumTextStyle,
+                          popularBook.bookname,
+                          style: Styles.mediumTextStyle,
+                          maxLines: 1
                       ),
                       SizedBox(height: 5),
                       Flexible(
-                        child: Text(
-                          popularBook.desc,
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 2,
-                          softWrap: true,
-                          style: TextStyle(
-                              fontSize: 13,
-                              fontWeight: FontWeight.w600,
-                              color: Theme.of(context).primaryColor),
+                        child: AutoSizeText(
+                            popularBook.desc,
+                            style: TextStyle(fontSize: 12.0),
+                            maxLines: 2,
                         ),
                       ),
                       SizedBox(height: 5),
@@ -76,7 +73,7 @@ class PopularList extends StatelessWidget {
                         popularBook.price,
                         style: TextStyle(
                             color: Colors.red,
-                            fontSize: 15,
+                            fontSize: 13,
                             fontWeight: FontWeight.w900),
                       )
                     ],

@@ -55,6 +55,7 @@ dependencies:
   flutter_staggered_animations: ^0.1.2
   youtube_player_flutter: ^7.0.0+6
   font_awesome_flutter: ^8.8.1
+
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
 

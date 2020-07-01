@@ -3,32 +3,19 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 ThemeData light = ThemeData(
   brightness: Brightness.light,
-  //  primarySwatch: Colors.deepOrange,
-  // accentColor: Colors.pink,
-  //   scaffoldBackgroundColor: Colors.white,
-  //   backgroundColor: Colors.white70,
-  // cardColor: AppColors.cardWhite,
-  // dividerColor: AppColors.dividerColor,
-//        appBarTheme: AppBarTheme(
-//        color: AppColors.white,
-//        brightness: Brightness.light,
-//        iconTheme: IconThemeData(color: AppColors.black)),
-//        snackBarTheme: SnackBarThemeData(backgroundColor: AppColors.primaryColor)
+  appBarTheme: AppBarTheme(
+      color: Colors.black,
+      brightness: Brightness.dark,
+      iconTheme: IconThemeData(color: Colors.white)),
+
 );
 
 ThemeData dark = ThemeData(
   brightness: Brightness.dark,
-  // primarySwatch: Colors.green,
-  //    accentColor: Colors.pink,
-  //  scaffoldBackgroundColor: Colors.black,
-  //backgroundColor: Colors.black12,
-  //  cardColor: AppColors.cardWhite,
-  //   dividerColor: AppColors.dividerColor,
-//        appBarTheme: AppBarTheme(
-//        color: AppColors.black,
-//        brightness: Brightness.dark,
-//        iconTheme: IconThemeData(color: AppColors.black)),
-//        snackBarTheme: SnackBarThemeData(backgroundColor: AppColors.primaryColor)
+  appBarTheme: AppBarTheme(
+      color: Colors.white,
+      brightness: Brightness.light,
+      iconTheme: IconThemeData(color: Colors.black)),
 );
 
 class ThemeNotifier extends ChangeNotifier {
