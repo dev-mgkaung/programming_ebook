@@ -1,11 +1,12 @@
 import 'dart:convert';
 
+import 'package:programmingebook/models/network_model/newEvent/models.dart';
+import 'package:programmingebook/models/network_model/newEvent/post_rsponse.dart';
 import 'package:programmingebook/services/base/base_repository.dart';
 import 'package:programmingebook/services/networks/constants/endpoint.dart';
 import 'package:programmingebook/services/persistances/data/sharedpref/constants/preferences.dart';
 import 'package:programmingebook/services/persistances/data/sharedpref/preference_connector.dart';
 import '../api_clients/rest_client.dart';
-
 import 'package:programmingebook/models/network_model/popular/popular_book_response.dart';
 import 'package:programmingebook/models/network_model/popular/popular_book.dart';
 import 'package:programmingebook/models/network_model/category/category_book.dart';
@@ -32,6 +33,12 @@ class AppRepository extends BaseRepository {
   Future<List<CategoryBook>> fetchCategoryBookList() async {
     final response = await _helper.get("${Endpoints.bookCategory}");
     return CategoryResponse.fromJson(response).results;
+  }
+
+  @override
+  Future<List<Post>> fetchPosts(int startIndex, int limit) async {
+    final response = await _helper.get('${Endpoints.bookPost}?_start=$startIndex&_limit=$limit');
+    return PostResponse.fromJson(response).results;
   }
 
   @override

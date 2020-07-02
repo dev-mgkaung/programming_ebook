@@ -37,14 +37,11 @@ class _BookDetailPageState extends State<BookDetailPage> {
         child: Scaffold(
           appBar: AppBar(
             elevation: 0,
-            backgroundColor: Colors.white,
             leading: BackPressIcon(),
             actions: <Widget>[
               IconButton(
                 icon: Icon(
-                  Icons.shopping_cart,
-                  color: Colors.blueAccent,
-                ),
+                  Icons.shopping_cart,),
               ),
               IconButton(
                 icon: Icon(

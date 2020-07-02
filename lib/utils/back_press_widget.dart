@@ -6,7 +6,6 @@ class BackPressIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
         icon: Icon(Icons.arrow_back_ios),
-        color: Colors.blueAccent,
         onPressed: () {
           PageRouter.goToBackScreen(context);
         });

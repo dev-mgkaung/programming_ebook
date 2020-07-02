@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:programmingebook/routes.dart';
+import 'package:programmingebook/screens/newEvent/new_events.dart';
 import 'package:programmingebook/screens/page/about.dart';
 import 'package:programmingebook/utils/asset_path.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -69,6 +71,9 @@ class AppDrawer extends StatelessWidget {
           _createDrawerItem(
             icon: Icons.new_releases,
             text: 'new_menu'.tr().toString(),
+            onTap: (){
+              PageRouter.gotoNextPage(context, NewEventPage());
+            }
           ),
           _createDrawerItem(
             icon: Icons.card_giftcard,

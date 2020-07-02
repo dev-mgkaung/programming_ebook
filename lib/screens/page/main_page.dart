@@ -34,9 +34,8 @@ class _MainPageState extends State<MainPage> {
           key: _globalKey,
           appBar: AppBar(
             elevation: 0,
-            backgroundColor: Colors.white,
             leading: IconButton(
-              icon: Icon(Icons.menu, color: Colors.blueAccent),
+              icon: Icon(Icons.menu),
               onPressed: () {
                 _globalKey.currentState.openDrawer();
               },

@@ -4,18 +4,19 @@ import 'package:shared_preferences/shared_preferences.dart';
 ThemeData light = ThemeData(
   brightness: Brightness.light,
   appBarTheme: AppBarTheme(
-      color: Colors.black,
-      brightness: Brightness.dark,
-      iconTheme: IconThemeData(color: Colors.white)),
+      color: Colors.white,
+      brightness: Brightness.light,
+      iconTheme: IconThemeData(color: Colors.black)),
+
 
 );
 
 ThemeData dark = ThemeData(
   brightness: Brightness.dark,
   appBarTheme: AppBarTheme(
-      color: Colors.white,
-      brightness: Brightness.light,
-      iconTheme: IconThemeData(color: Colors.black)),
+      color: Colors.black12,
+      brightness: Brightness.dark,
+      iconTheme: IconThemeData(color: Colors.white)),
 );
 
 class ThemeNotifier extends ChangeNotifier {

@@ -19,7 +19,7 @@ class ProfileListItem extends StatelessWidget {
       margin: const EdgeInsets.only(left: 10, right: 10, top: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
-        color: Theme.of(context).backgroundColor,
+
         boxShadow: [
           BoxShadow(
             color: Colors.white.withOpacity(0.2),
