@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:programmingebook/routes.dart';
 import 'package:programmingebook/screens/settings/profile_list_item.dart';
+import 'package:programmingebook/screens/shippingaddress/shopping_address_view.dart';
 import 'package:programmingebook/utils/asset_path.dart';
 import '../../constraints/theme.dart';
 import '../../utils/utils_message.dart';
@@ -9,7 +11,6 @@ import 'package:provider/provider.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:image_cropper/image_cropper.dart';
-import 'package:flutter_image_compress/flutter_image_compress.dart';
 
 
 class SettingScreen extends StatefulWidget {
@@ -136,9 +137,12 @@ class _SettingScreenState extends State<SettingScreen> {
                   icon: FontAwesomeIcons.userEdit,
                   text: 'Edit My Profile',
                 ),
-                ProfileListItem(
-                  icon: FontAwesomeIcons.addressCard,
-                  text: 'Shipping Address',
+                GestureDetector(
+                  child: ProfileListItem(
+                    icon: FontAwesomeIcons.addressCard,
+                    text: 'Shipping Address',
+                  ),
+                  onTap: (){PageRouter.gotoNextPage(context, ShippingAddressView());},
                 ),
                 ProfileListItem(
                   icon: FontAwesomeIcons.paypal,
