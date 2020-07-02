@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:programmingebook/routes.dart';
+import 'package:programmingebook/screens/payments/payment_method.dart';
 import 'package:programmingebook/screens/settings/profile_list_item.dart';
 import 'package:programmingebook/screens/shippingaddress/shopping_address_view.dart';
 import 'package:programmingebook/utils/asset_path.dart';
@@ -133,9 +134,14 @@ class _SettingScreenState extends State<SettingScreen> {
               physics: NeverScrollableScrollPhysics(),
               scrollDirection: Axis.vertical,
               children: <Widget>[
-                ProfileListItem(
-                  icon: FontAwesomeIcons.userEdit,
-                  text: 'Edit My Profile',
+                GestureDetector(
+                  child: ProfileListItem(
+                    icon: FontAwesomeIcons.userEdit,
+                    text: 'Edit My Profile',
+                  ),
+                  onTap:(){
+
+                  }
                 ),
                 GestureDetector(
                   child: ProfileListItem(
@@ -144,9 +150,14 @@ class _SettingScreenState extends State<SettingScreen> {
                   ),
                   onTap: (){PageRouter.gotoNextPage(context, ShippingAddressView());},
                 ),
-                ProfileListItem(
-                  icon: FontAwesomeIcons.paypal,
-                  text: 'Payment Method',
+                GestureDetector(
+                  child: ProfileListItem(
+                    icon: FontAwesomeIcons.paypal,
+                    text: 'Payment Method',
+                  ),
+                  onTap:(){
+                    PageRouter.gotoNextPage(context, PaymentMethodPage());
+                  }
                 ),
                 GestureDetector(
                   child: ProfileListItem(

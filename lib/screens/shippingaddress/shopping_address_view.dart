@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:programmingebook/constraints/dimens.dart';
 import 'package:programmingebook/constraints/styles.dart';
 import 'package:programmingebook/routes.dart';
+import 'package:programmingebook/screens/shippingaddress/add_shipping_address.dart';
 import 'package:programmingebook/utils/back_press_widget.dart';
-
 import 'package:programmingebook/widgets/action_card.dart';
 import 'package:programmingebook/widgets/custom_checkbox.dart';
 
-import 'add_shipping_address_view.dart';
 
 class ShippingAddressView extends StatefulWidget {
 
@@ -47,7 +46,7 @@ class _ShippingAddressViewState extends State<ShippingAddressView> {
                       child: FloatingActionButton(
                           mini: true,
                           onPressed: (() => {
-                            PageRouter.gotoNextPage(context, AddShippingAddressView())
+                            PageRouter.gotoNextPage(context, AddShippingAddressPage())
                           }),
                           child: Icon(Icons.add, size: 36)),
                     ),

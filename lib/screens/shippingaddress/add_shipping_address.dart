@@ -7,15 +7,15 @@ import 'package:programmingebook/widgets/custom_button.dart';
 import 'package:programmingebook/widgets/input_field.dart';
 
 
-class AddShippingAddressView extends StatefulWidget {
+class AddShippingAddressPage extends StatefulWidget {
 
-  const AddShippingAddressView({Key key}) : super(key: key);
+  const AddShippingAddressPage({Key key}) : super(key: key);
 
   @override
-  _AddShippingAddressViewState createState() => _AddShippingAddressViewState();
+  _AddShippingAddressPageState createState() => _AddShippingAddressPageState();
 }
 
-class _AddShippingAddressViewState extends State<AddShippingAddressView> {
+class _AddShippingAddressPageState extends State<AddShippingAddressPage> {
   int paymentCardIndex = 0;
   ShippingAddressDataSource dataSource;
 
