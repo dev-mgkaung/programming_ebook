@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:programmingebook/constraints/dimens.dart';
 import 'package:programmingebook/constraints/styles.dart';
-import 'package:programmingebook/screens/shippingaddress/checkout_bloc.dart';
-import 'package:programmingebook/screens/shippingaddress/checkout_event.dart';
-import 'package:programmingebook/screens/shippingaddress/checkout_state.dart';
+import 'package:programmingebook/models/local_model/shipping_address_data_source.dart';
 import 'package:programmingebook/utils/back_press_widget.dart';
 import 'package:programmingebook/widgets/custom_button.dart';
 import 'package:programmingebook/widgets/input_field.dart';
@@ -20,6 +17,8 @@ class AddShippingAddressView extends StatefulWidget {
 
 class _AddShippingAddressViewState extends State<AddShippingAddressView> {
   int paymentCardIndex = 0;
+  ShippingAddressDataSource dataSource;
+
 
   TextEditingController _fullNameController;
   TextEditingController _addressController;
@@ -38,6 +37,7 @@ class _AddShippingAddressViewState extends State<AddShippingAddressView> {
     _countryController = TextEditingController();
 
     super.initState();
+
   }
 
   @override
