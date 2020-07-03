@@ -3,8 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:programmingebook/constraints/dimens.dart';
 import 'package:programmingebook/constraints/styles.dart';
 import 'package:programmingebook/models/entitys/shipping_address_entity.dart';
+import 'package:programmingebook/routes.dart';
 import 'package:programmingebook/screens/shippingaddress/blocs/shopping_address_event.dart';
 import 'package:programmingebook/screens/shippingaddress/blocs/shopping_addresss_bloc.dart';
+import 'package:programmingebook/screens/shippingaddress/shopping_address_view.dart';
 import 'package:programmingebook/services/persistances/data/local/database_provider.dart';
 import 'package:programmingebook/utils/back_press_widget.dart';
 import 'package:programmingebook/widgets/custom_button.dart';
@@ -16,7 +18,11 @@ class AddShippingAddressPage extends StatefulWidget {
   final int query;
   final ShippingAddressEntity shippingAddressEntity;
   const AddShippingAddressPage(
-      {Key key, this.title, this.isDeleteMode, this.query, this.shippingAddressEntity})
+      {Key key,
+      this.title,
+      this.isDeleteMode,
+      this.query,
+      this.shippingAddressEntity})
       : super(key: key);
 
   @override
@@ -24,8 +30,8 @@ class AddShippingAddressPage extends StatefulWidget {
 }
 
 class _AddShippingAddressPageState extends State<AddShippingAddressPage> {
-
-  final GlobalKey<_AddShippingAddressPageState> _formKey = GlobalKey<_AddShippingAddressPageState>();
+  final GlobalKey<_AddShippingAddressPageState> _formKey =
+      GlobalKey<_AddShippingAddressPageState>();
 
   TextEditingController _fullNameController;
   TextEditingController _addressController;
@@ -44,13 +50,12 @@ class _AddShippingAddressPageState extends State<AddShippingAddressPage> {
     _countryController = TextEditingController();
 
     super.initState();
-   if(widget.shippingAddressEntity!=null)
-    {
-      _fullNameController.text=widget.shippingAddressEntity.title;
-      _addressController.text=widget.shippingAddressEntity.address;
-      _cityController.text=widget.shippingAddressEntity.city;
-      _countryController.text=widget.shippingAddressEntity.country;
-      _postalController.text=widget.shippingAddressEntity.postal;
+    if (widget.shippingAddressEntity != null) {
+      _fullNameController.text = widget.shippingAddressEntity.title;
+      _addressController.text = widget.shippingAddressEntity.address;
+      _cityController.text = widget.shippingAddressEntity.city;
+      _countryController.text = widget.shippingAddressEntity.country;
+      _postalController.text = widget.shippingAddressEntity.postal;
     }
   }
 
@@ -68,104 +73,108 @@ class _AddShippingAddressPageState extends State<AddShippingAddressPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        title: Text(widget.title, style: Styles.defaultTextStyle),
-        leading: BackPressIcon(),
-        actions: <Widget>[
-          widget.isDeleteMode
-              ? IconButton(
-                  icon: Icon(Icons.delete),
+        appBar: AppBar(
+          elevation: 0,
+          title: Text(widget.title, style: Styles.defaultTextStyle),
+          leading: IconButton(
+              icon: Icon(Icons.arrow_back_ios),
+              onPressed: () {
+                PageRouter.pushPageReplacement(context,ShippingAddressView());
+              }),
+          actions: <Widget>[
+            widget.isDeleteMode
+                ? IconButton(
+                    icon: Icon(Icons.delete),
+                    onPressed: () {
+                      DatabaseProvider.db.delete(widget.query).then((_) {
+                        BlocProvider.of<ShippingAddressBloc>(context).add(
+                          DeleteShippingAddress(widget.query),
+                        );
+                        PageRouter.pushPageReplacement(context, ShippingAddressView());
+                      });
+                    })
+                : Container(),
+          ],
+        ),
+        body: Form(
+            key: _formKey,
+            child: SingleChildScrollView(
+                child: Column(children: <Widget>[
+              Padding(
+                padding: EdgeInsets.only(bottom: AppSizes.sidePadding),
+              ),
+              FlutterInputField(
+                controller: _fullNameController,
+                hint: 'Full name',
+              ),
+              Padding(
+                padding: EdgeInsets.only(bottom: AppSizes.sidePadding),
+              ),
+              FlutterInputField(
+                controller: _addressController,
+                hint: 'Address',
+              ),
+              Padding(
+                padding: EdgeInsets.only(bottom: AppSizes.sidePadding),
+              ),
+              FlutterInputField(
+                controller: _cityController,
+                hint: 'City',
+              ),
+              Padding(
+                padding: EdgeInsets.only(bottom: AppSizes.sidePadding),
+              ),
+              FlutterInputField(
+                controller: _stateController,
+                hint: 'State/Province/Region',
+              ),
+              Padding(
+                padding: EdgeInsets.only(bottom: AppSizes.sidePadding),
+              ),
+              FlutterInputField(
+                controller: _postalController,
+                hint: 'Zip Code (Postal Code)',
+              ),
+              Padding(
+                padding: EdgeInsets.only(bottom: AppSizes.sidePadding),
+              ),
+              FlutterInputField(
+                controller: _countryController,
+                hint: 'Country',
+              ),
+              Padding(
+                padding: EdgeInsets.only(bottom: AppSizes.sidePadding),
+              ),
+              FlutterButton(
+                  title: 'SAVE ADDRESS',
                   onPressed: () {
-                    DatabaseProvider.db.delete(widget.query).then((_) {
-                      BlocProvider.of<ShippingAddressBloc>(context).add(
-                        DeleteShippingAddress(widget.query),
-                      );
-                     Navigator.pop(context);
-                    });
-                  })
-              : Container(),
-        ],
-      ),
-      body:Form(
-      key: _formKey,
-      child: SingleChildScrollView(
-              child: Column(children: <Widget>[
-            Padding(
-              padding: EdgeInsets.only(bottom: AppSizes.sidePadding),
-            ),
-            FlutterInputField(
-              controller:_fullNameController,
-              hint: 'Full name',
-            ),
-            Padding(
-              padding: EdgeInsets.only(bottom: AppSizes.sidePadding),
-            ),
-            FlutterInputField(
-              controller: _addressController,
-              hint: 'Address',
-            ),
-            Padding(
-              padding: EdgeInsets.only(bottom: AppSizes.sidePadding),
-            ),
-            FlutterInputField(
-              controller: _cityController,
-              hint: 'City',
-            ),
-            Padding(
-              padding: EdgeInsets.only(bottom: AppSizes.sidePadding),
-            ),
-            FlutterInputField(
-              controller: _stateController,
-              hint: 'State/Province/Region',
-            ),
-            Padding(
-              padding: EdgeInsets.only(bottom: AppSizes.sidePadding),
-            ),
-            FlutterInputField(
-              controller: _postalController,
-              hint: 'Zip Code (Postal Code)',
-            ),
-            Padding(
-              padding: EdgeInsets.only(bottom: AppSizes.sidePadding),
-            ),
-            FlutterInputField(
-              controller: _countryController,
-              hint: 'Country',
-            ),
-            Padding(
-              padding: EdgeInsets.only(bottom: AppSizes.sidePadding),
-            ),
-            FlutterButton(
-                title: 'SAVE ADDRESS',
-                onPressed: () {
-                  ShippingAddressEntity entity =
-                      ShippingAddressEntity(
-                          title: _fullNameController.text,
-                          address: _addressController.text,
-                          city: _cityController.text,
-                          postal: _postalController.text,
-                          country: _countryController.text,
-                          isChecked: true);
-                  //delete mode false case is insert
-                  widget.isDeleteMode == false
-                      ? DatabaseProvider.db
-                          .insert(entity)
-                          .then((shipping) {
-                          BlocProvider.of<ShippingAddressBloc>(context).add(
-                            AddShippingAddress(shipping),
-                          );
-                        })
-                      :
+                    ShippingAddressEntity entity = ShippingAddressEntity(
+                        title: _fullNameController.text,
+                        address: _addressController.text,
+                        city: _cityController.text,
+                        postal: _postalController.text,
+                        country: _countryController.text,
+                        isChecked: true);
+                    //delete mode false case is insert
+                    if (widget.isDeleteMode == false) {
+                      DatabaseProvider.db.insert(entity).then((shipping) {
+                        BlocProvider.of<ShippingAddressBloc>(context).add(
+                          AddShippingAddress(shipping),
+                        );
+                      });
+                    } else {
+                      print("changes update=+${entity.title} ${entity.address}");
                       //delete mode true case is update
-                      DatabaseProvider.db.update(entity).then(
-                            (data) => BlocProvider.of<ShippingAddressBloc>(context)
-                                    .add(UpdateShippingAddress(widget.query, entity),
-                            ),
+                      DatabaseProvider.db.update(widget.query, entity).then(
+                            (data) {
+                              BlocProvider.of<ShippingAddressBloc>(context)
+                                    .add(UpdateShippingAddress(entity),);
+
+                            }
                           );
-                  Navigator.pop(context);
-                }),
-          ]
-              ))));
+                    }
+                    PageRouter.pushPageReplacement(context, ShippingAddressView());
+                  }),
+            ]))));
   }
 }

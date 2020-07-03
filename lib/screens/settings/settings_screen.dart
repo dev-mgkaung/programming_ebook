@@ -147,7 +147,7 @@ class _SettingScreenState extends State<SettingScreen> {
                     icon: FontAwesomeIcons.addressCard,
                     text: 'Shipping Address',
                   ),
-                  onTap: (){PageRouter.gotoNextPage(context, ShippingAddressView());},
+                  onTap: (){PageRouter.pushPageReplacement(context, ShippingAddressView());},
                 ),
                 GestureDetector(
                   child: ProfileListItem(

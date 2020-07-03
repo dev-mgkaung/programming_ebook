@@ -103,14 +103,14 @@ class DatabaseProvider {
     );
   }
 
-  Future<int> update(ShippingAddressEntity shippingAddressEntity) async {
+  Future<int> update(int id,ShippingAddressEntity shippingAddressEntity) async {
     final db = await database;
 
     return await db.update(
       TABLE_SHIPPING,
       shippingAddressEntity.toMap(),
       where: "id = ?",
-      whereArgs: [shippingAddressEntity.id],
+      whereArgs: [id],
     );
   }
 }

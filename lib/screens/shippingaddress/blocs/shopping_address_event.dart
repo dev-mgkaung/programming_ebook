@@ -34,8 +34,8 @@ class UpdateShippingAddress extends ShippingAddressEvent {
   ShippingAddressEntity updateEntity;
   int id;
 
-  UpdateShippingAddress(int index, ShippingAddressEntity shippingAddressEntity) {
+  UpdateShippingAddress( ShippingAddressEntity shippingAddressEntity) {
   updateEntity = shippingAddressEntity;
-  id = index;
+  id = shippingAddressEntity.id;
 }
 }

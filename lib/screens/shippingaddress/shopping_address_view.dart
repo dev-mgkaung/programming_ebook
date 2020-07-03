@@ -4,12 +4,13 @@ import 'package:programmingebook/constraints/dimens.dart';
 import 'package:programmingebook/constraints/styles.dart';
 import 'package:programmingebook/models/entitys/shipping_address_entity.dart';
 import 'package:programmingebook/routes.dart';
+import 'package:programmingebook/screens/page/main_page.dart';
 import 'package:programmingebook/screens/shippingaddress/add_shipping_address.dart';
 import 'package:programmingebook/screens/shippingaddress/blocs/shopping_address_event.dart';
 import 'package:programmingebook/screens/shippingaddress/blocs/shopping_addresss_bloc.dart';
 import 'package:programmingebook/screens/shippingaddress/local_widgets/build_shipping_address.dart';
 import 'package:programmingebook/services/persistances/data/local/database_provider.dart';
-import 'package:programmingebook/utils/back_press_widget.dart';
+
 
 class ShippingAddressView extends StatefulWidget {
 
@@ -35,7 +36,11 @@ class _ShippingAddressViewState extends State<ShippingAddressView> {
     return SafeArea(
         child: Scaffold(
         appBar: AppBar(elevation: 0, title: Text("My Shipping Address", style: Styles.defaultTextStyle,),
-        leading: BackPressIcon(),
+        leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios),
+            onPressed: () {
+              PageRouter.pushPageReplacement(context,MainPage());
+            })
                        ),
         body: SafeArea(
         child: Container(
@@ -56,7 +61,7 @@ class _ShippingAddressViewState extends State<ShippingAddressView> {
              right: 20,
              child: FloatingActionButton(
              onPressed: (() => {
-             PageRouter.gotoNextPage(context, AddShippingAddressPage(title: "New My Address",isDeleteMode: false,))
+             PageRouter.pushPageReplacement(context, AddShippingAddressPage(title: "New My Address",isDeleteMode: false,))
              }),
              child: Icon(Icons.add, size: 36)),
            ),

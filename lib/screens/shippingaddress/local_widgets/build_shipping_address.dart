@@ -26,7 +26,7 @@ class _buildShippingAddressState extends State<buildShippingAddress> {
           title: widget.title,
           linkText: 'Edit',
           onLinkTap: (){
-            PageRouter.gotoNextPage(context, AddShippingAddressPage(query: widget.id, title: "Edit My Address",isDeleteMode: true,shippingAddressEntity: widget.shippingAddressEntity));
+            PageRouter.pushPageReplacement(context, AddShippingAddressPage(query: widget.id, title: "Edit My Address",isDeleteMode: true,shippingAddressEntity: widget.shippingAddressEntity));
           },
           child: Column(children: <Widget>[
             RichText(
@@ -40,7 +40,7 @@ class _buildShippingAddressState extends State<buildShippingAddress> {
                 alignment: Alignment.centerRight,
                 child: CustomCheckbox(
                     width: widget.width,
-                    title: 'Use as the shipping address',
+                    title: 'Use as the shipping address ${widget.id}',
                     checked: widget.checked,
                     onTap: ((bool newValue) =>
                     {
