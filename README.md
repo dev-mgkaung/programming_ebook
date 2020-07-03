@@ -41,9 +41,12 @@ Project Structure
  ----
  
  *** Features
- 1. Themes change (Dark Mode, Light Mode)          <=>   ( Using Provider )
- 2. Multiple Languge Support (Myanmar,English)     <=>   ( Using Localization with json file)
- 3. Data Source from Post man mock api             <=>   ( Using Bloc, rxdrt, dio )
+ 1. Themes change (Dark Mode, Light Mode)                                     <=>   ( Using Provider )
+ 2. Multiple Languge Support (Myanmar,English)                                <=>   ( Using Localization with json file)
+ 3. Data Source from (Post man mock, JsonServer, Github page) api             <=>   ( Using Flutter Bloc, rxdrt, dio )
+ 4. Shipping Address and Payment Card list(db)                                <=>   ( Using Sqflite - local database)
+ 5. Eidt Profile (choose image, and then crop with compress imagesize)        <=> (Using imagepicker , image cropper, image compresser)
+ 6. 
 
 
 --------
