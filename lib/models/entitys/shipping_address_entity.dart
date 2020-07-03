@@ -1,45 +1,39 @@
 
+import 'package:programmingebook/services/persistances/data/local/database_provider.dart';
 
-import 'package:programmingebook/services/persistances/data/local/entity.dart';
+class ShippingAddressEntity  {
+   int id;
+   String title;
+   String address;
+   String city;
+   String country;
+   String postal;
+   bool isChecked;
 
-class ShippingAddressEntity extends Entity<int> {
-  final String title;
-  final String address;
-  final String city;
-  final String country;
-  final String postal;
-  final bool isDefault;
+   ShippingAddressEntity({this.id,this.title, this.address, this.city, this.country,postal,this.isChecked});
 
-  ShippingAddressEntity(
-    {int id,
-    this.title,
-    this.address,
-    this.city,
-    this.country,
-    this.postal,
-    this.isDefault}) : super(id);
+   Map<String, dynamic> toMap() {
+     var map = <String, dynamic>{
+       DatabaseProvider.COLUMN_TITLE: title,
+       DatabaseProvider.COLUMN_ADDRESS: address,
+       DatabaseProvider.COLUMN_CITY: city,
+       DatabaseProvider.COLUMN_COUNTRY: country,
+       DatabaseProvider.COLUMN_POSTAL: postal,
+       DatabaseProvider.COLUMN_CHECKED: isChecked ? 1: 0
+     };
+     if (id != null) {
+       map[DatabaseProvider.COLUMN_ID] = id;
+     }
+     return map;
+   }
 
-  @override
-  Map<String, dynamic> toMap() {
-    return {
-      'id': id,
-      'title': title,
-      'address': address,
-      'city': city,
-      'country': country,
-      'postal': postal,
-      'isDefault': isDefault
-    };
-  }
-
-  @override
-  List<Object> get props => [
-    id, 
-    title, 
-    address, 
-    city, 
-    country, 
-    postal, 
-    isDefault
-  ];
+   ShippingAddressEntity.fromMap(Map<String, dynamic> map) {
+     id = map[DatabaseProvider.COLUMN_ID];
+     title = map[DatabaseProvider.COLUMN_TITLE];
+     address = map[DatabaseProvider.COLUMN_ADDRESS];
+     city = map[DatabaseProvider.COLUMN_CITY];
+     country = map[DatabaseProvider.COLUMN_COUNTRY];
+     postal = map[DatabaseProvider.COLUMN_POSTAL] ;
+     isChecked=map[DatabaseProvider.COLUMN_CHECKED]==1;
+   }
 }

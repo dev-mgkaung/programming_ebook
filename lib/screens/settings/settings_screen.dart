@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:programmingebook/routes.dart';
 import 'package:programmingebook/screens/payments/payment_method.dart';
 import 'package:programmingebook/screens/settings/profile_list_item.dart';
+import 'package:programmingebook/screens/shippingaddress/add_shipping_address.dart';
 import 'package:programmingebook/screens/shippingaddress/shopping_address_view.dart';
 import 'package:programmingebook/utils/asset_path.dart';
 import '../../constraints/theme.dart';
@@ -139,9 +140,7 @@ class _SettingScreenState extends State<SettingScreen> {
                     icon: FontAwesomeIcons.userEdit,
                     text: 'Edit My Profile',
                   ),
-                  onTap:(){
-
-                  }
+                  onTap: (){PageRouter.gotoNextPage(context, AddShippingAddressPage());},
                 ),
                 GestureDetector(
                   child: ProfileListItem(
