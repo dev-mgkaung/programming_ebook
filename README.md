@@ -45,8 +45,8 @@ Project Structure
  2. Multiple Languge Support (Myanmar,English)                                <=>   ( Using Localization with json file)
  3. Data Source from (Post man mock, JsonServer, Github page) api             <=>   ( Using Flutter Bloc, rxdrt, dio )
  4. Shipping Address and Payment Card list(db)                                <=>   ( Using Sqflite - local database)
- 5. Eidt Profile (choose image, and then crop with compress imagesize)        <=> (Using imagepicker , image cropper, image compresser)
- 6. 
+ 5. Eidt Profile (choose image, and then crop with compress imagesize)        <=>   (Using imagepicker , image cropper, image compresser)
+ 6. AboutDialog (with phone call, visit website)                              <=>   ( Using url launcher) 
 
 
 --------
