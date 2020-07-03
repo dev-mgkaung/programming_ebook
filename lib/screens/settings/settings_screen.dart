@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:programmingebook/routes.dart';
+import 'package:programmingebook/screens/order/order_list.dart';
 import 'package:programmingebook/screens/payments/payment_method.dart';
 import 'package:programmingebook/screens/settings/profile_list_item.dart';
 import 'package:programmingebook/screens/shippingaddress/add_shipping_address.dart';
@@ -140,7 +141,7 @@ class _SettingScreenState extends State<SettingScreen> {
                     icon: FontAwesomeIcons.userEdit,
                     text: 'Edit My Profile',
                   ),
-                  onTap: (){PageRouter.gotoNextPage(context, AddShippingAddressPage());},
+
                 ),
                 GestureDetector(
                   child: ProfileListItem(
@@ -167,9 +168,12 @@ class _SettingScreenState extends State<SettingScreen> {
                     UtilsMessage.handleClickMe(context);
                   },
                 ),
-                ProfileListItem(
-                  icon: FontAwesomeIcons.firstOrder,
-                  text: 'My Order',
+                GestureDetector(
+                  child: ProfileListItem(
+                    icon: FontAwesomeIcons.firstOrder,
+                    text: 'My Order',
+                  ),
+                  onTap: (){PageRouter.gotoNextPage(context, MyOrder());},
                 ),
                 ProfileListItem(
                   icon: FontAwesomeIcons.save,
